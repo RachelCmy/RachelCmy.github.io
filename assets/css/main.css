@@ -3007,9 +3007,10 @@ input, select, textarea {
 			background-position: center center;
 			/* background-size: cover; */
 			border-radius: 0;
-			display: block;
+			display: flex;
 			position: relative;
 			width: 25em;
+			vertical-align: center;
 		}
 
 			.spotlights > section > .image img {
@@ -3034,7 +3035,7 @@ input, select, textarea {
 			}
 		
 		.spotlights > section > .imgcontent {
-				padding: 0.5em 0.5em 0.5em 0.5em ;
+				padding: 0em 0em 0em 0em ;
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -3047,7 +3048,7 @@ input, select, textarea {
 				-webkit-justify-content: center;
 				-ms-justify-content: center;
 				justify-content: center;
-				width: 30%;
+				width: 34%;
 				-ms-flex: 1;
 			}
 			
