@@ -3048,7 +3048,7 @@ input, select, textarea {
 				-webkit-justify-content: center;
 				-ms-justify-content: center;
 				justify-content: center;
-				width: 34%;
+				width: 25em;
 				-ms-flex: 1;
 			}
 			
@@ -3131,7 +3131,6 @@ input, select, textarea {
 
 				.spotlights > section > .imgcontent {
 					width: 100%;
-					height: 50vh;
 				}
 
 				.spotlights > section > .content {
