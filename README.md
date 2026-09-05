@@ -18,7 +18,9 @@ The site is built with Astro and generated as static HTML for GitHub Pages. Its 
 
 ### Add a publication
 
-1. Add the BibTeX entry to `works.bib`.
+1. Add the BibTeX entry to `works.bib`. Include `date = {YYYY-MM-DD}` when
+   available, or at least `month`, so publications within the same year follow
+   calendar order; records without either are placed last in that year.
 2. Add a matching item to `src/data/publications.yml` using the same BibTeX key.
 3. Add a compact `venueShort` label for the card badge (for example,
    `SIGGRAPH 2026`), and set `preprint: true` while the work belongs in the

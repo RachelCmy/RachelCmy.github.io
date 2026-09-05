@@ -185,7 +185,7 @@
     - label: Code
       url: https://github.com/tum-pbs/ConFIG
 
-- bibkey: https://doi.org/10.2312/pg.20251268
+- bibkey: tianhongPG
   venueShort: Pacific Graphics 2025
   topics: [Physical Simulation, Fluid-solid Coupling]
   media:

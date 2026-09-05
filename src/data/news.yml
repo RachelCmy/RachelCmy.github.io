@@ -4,6 +4,11 @@
   detail: Graphical Models — Elsevier journal on 3D geometric modeling & shape processing; CCF-B.
   link: https://www.sciencedirect.com/journal/graphical-models/about/editorial-board
 - date: 2026
+  type: Talk
+  title: Back at TUM for a talk, six years after my Ph.D.
+  detail: “Simulation-Ready Reconstruction and Generation of the World” — very happy to be back!
+  link: https://ge.in.tum.de/about/mengyu-rachel/
+- date: 2026
   type: Publication
   title: 3 papers appear in the SIGGRAPH 2026
   detail: LagrangianSplats, Robustness Parametric Surface CCD， and LoBoFit explore fluid reconstruction， floating-point-robust CCD, and flexible garment refitting.

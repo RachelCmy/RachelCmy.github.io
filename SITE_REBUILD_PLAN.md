@@ -318,6 +318,25 @@ Validation results for this refinement:
 - Extended verification so every News item must have a valid URL and obsolete
   section-kicker labels cannot reappear unnoticed.
 
+### 2026-09-05 — Unified section titles and chronological publications
+
+- Unified the Bio, News, Publications, Preprints, Funding, and Service titles on
+  one serif type scale, positioned between the former compact News title and
+  oversized Publications title.
+- Reduced section top padding so the whitespace before every module title is
+  tighter while preserving clear separation between content blocks.
+- Changed publication ordering to year descending and, within each year,
+  calendar date ascending. Explicit `date` values take priority, then `month`;
+  entries without either appear last in their year.
+- Added April metadata to the 2025 and 2026 ICLR entries so they correctly
+  precede the corresponding summer SIGGRAPH publications.
+- Confirmed that `works.bib` remains the primary source for publication titles,
+  authors, venues, years, dates, DOI, and source URLs; `publications.yml` only
+  augments those records with display metadata, summaries, media, and extra
+  links.
+- Removed the YouTube profile link from the hero, contact links, and structured
+  profile metadata.
+
 ## 12. Social-preview generation record
 
 The project-bound output is `public/og.png`. It was generated with the built-in ImageGen tool at 1200×630 pixels and visually checked for exact text.

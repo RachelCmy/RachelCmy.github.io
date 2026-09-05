@@ -236,6 +236,47 @@ function normalizeVenue(value: string, type: string): string {
   return venue || "Publication";
 }
 
+const monthNumbers: Record<string, number> = {
+  jan: 1,
+  january: 1,
+  feb: 2,
+  february: 2,
+  mar: 3,
+  march: 3,
+  apr: 4,
+  april: 4,
+  may: 5,
+  jun: 6,
+  june: 6,
+  jul: 7,
+  july: 7,
+  aug: 8,
+  august: 8,
+  sep: 9,
+  sept: 9,
+  september: 9,
+  oct: 10,
+  october: 10,
+  nov: 11,
+  november: 11,
+  dec: 12,
+  december: 12,
+};
+
+function sortablePublicationDate(fields: Record<string, string>, year: number): string {
+  const date = cleanLatex(fields.date);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+
+  const rawMonth = cleanLatex(fields.month).trim().toLowerCase();
+  const numericMonth = Number(rawMonth);
+  const month = Number.isInteger(numericMonth) && numericMonth >= 1 && numericMonth <= 12
+    ? numericMonth
+    : monthNumbers[rawMonth];
+
+  // Unknown months sort after dated records within the same year.
+  return year ? `${year}-${String(month ?? 13).padStart(2, "0")}-01` : "0000-13-01";
+}
+
 function makeMonogram(title: string): string {
   const ignored = new Set(["a", "an", "and", "for", "from", "in", "of", "on", "the", "to", "towards", "via", "with"]);
   return title
@@ -277,8 +318,8 @@ export function loadPublications(): Publication[] {
     .map((record) => {
       const enhancement = enhancementsByKey.get(record.key);
       const fields = record.fields;
-      const date = cleanLatex(fields.date);
-      const inferredYear = Number(cleanLatex(fields.year) || date.slice(0, 4));
+      const sourceDate = cleanLatex(fields.date);
+      const inferredYear = Number(cleanLatex(fields.year) || sourceDate.slice(0, 4));
       const year = enhancement?.year ?? (Number.isFinite(inferredYear) && inferredYear > 1900 ? inferredYear : 0);
       const title = cleanLatex(fields.title);
       const preprint = enhancement?.preprint ?? record.type === "misc";
@@ -295,7 +336,7 @@ export function loadPublications(): Publication[] {
         authors,
         venue: normalizeVenue(fields.booktitle || fields.journal, record.type),
         year,
-        date: date || (year ? `${year}-12-31` : "0000-01-01"),
+        date: sortablePublicationDate(fields, year),
         doi: cleanLatex(fields.doi) || undefined,
         url: cleanLatex(fields.url) || undefined,
         preprint,
@@ -309,5 +350,5 @@ export function loadPublications(): Publication[] {
       } satisfies Publication;
     })
     .filter((publication) => publication.title && publication.authors.length > 0)
-    .sort((left, right) => right.date.localeCompare(left.date) || right.year - left.year || left.title.localeCompare(right.title));
+    .sort((left, right) => right.year - left.year || left.date.localeCompare(right.date) || left.title.localeCompare(right.title));
 }
