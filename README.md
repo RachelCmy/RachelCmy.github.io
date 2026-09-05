@@ -43,6 +43,11 @@ Append an item to `src/data/news.yml`:
   link: https://example.com
 ```
 
+News year buttons are generated automatically from `date`. The latest year is
+selected by default; no navigation configuration is required. Every News item
+must include a relevant `link`, preferably an official event, journal, project,
+or paper page.
+
 ### Add funding or service
 
 Copy an existing item in `src/data/fundings.yml` or `src/data/service.yml` and replace its values. Each funding item requires its program category (`titleZh` and `titleEn`), concrete Chinese and English project titles (`projectTitleZh` and `projectTitleEn`), role, and period. If an official English title is not ready, keep `projectTitleEn` as an empty string; empty English titles are not rendered. Omit unknown optional fields such as `projectNumber` instead of inserting placeholder facts.

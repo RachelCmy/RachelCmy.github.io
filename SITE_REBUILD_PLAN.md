@@ -212,7 +212,7 @@ The site is functional without these details, but the following additions will m
 - Verified all publication destinations against official project pages, author pages, arXiv/OpenReview, publisher pages, and official repositories.
 - Added a Paper link for every one of the 22 publications; 17 publications also have a verified Project page, with Code, Video, Dataset, Results, or Supplement links where publicly available.
 - Added `src/data/authors.yml` as the single source of truth for personal-homepage links and abbreviated-name aliases.
-- Added 31 verified author profiles, producing 85 linked author-name instances across the rendered publication list while keeping Mengyu Chu visually emphasized.
+- Added 32 verified author profiles, producing 87 linked author-name instances across the rendered publication list while keeping Mengyu Chu visually emphasized.
 - Added 14 recent-paper teaser/featured images from official project, author, or paper pages. Together with the existing media, all 22 publication cards now have a paper-specific image or video.
 - Kept publication media on `object-fit: contain`, so wide teasers remain fully visible rather than being cropped.
 - Extended the verification script to reject duplicate author names/aliases and malformed author URLs.
@@ -223,7 +223,7 @@ Validation results for this refinement:
 - Astro diagnostics: 0 errors, 0 warnings, 0 hints.
 - Production build: successful; one static page generated.
 - Publication verification: 22 of 22 records rendered, each with a Paper link and relevant media.
-- Author-directory verification: 31 profiles valid; 85 linked author-name instances rendered.
+- Author-directory verification: 32 profiles valid; 87 linked author-name instances rendered.
 - Local development route: HTTP 200 and the new publication destinations are present in the served page.
 
 ### 2026-09-05 — Preprints, venue badges, and homepage line
@@ -289,10 +289,34 @@ Validation results for this refinement:
   Interface, and Pacific Graphics committee service.
 - Consolidated recurring committee appointments into one final “Technical
   Program Committees” entry with a compact two-column venue/year list.
-- Kept Associate Editor, Program Co-Chair, Poster Co-Chair, and Chair Secretariat
-  Member as separate entries because they represent distinct responsibilities.
+- Kept Associate Editor, Program Co-Chair, Workshop Co-Chair, Poster Co-Chair,
+  and Chair Secretariat Member as separate entries because they represent
+  distinct responsibilities.
 - Simplified each rendered row to two columns—year and role/venue—and removed the
   repetitive category column from the public page.
+
+### 2026-09-05 — News grouped by year
+
+- Added automatically generated year controls with per-year item counts.
+- Included the 2025 CAD/Graphics Workshop Co-Chair and SIGGRAPH Technical
+  Workshop keynote updates in the grouped News data.
+- The newest available year is selected on page load; choosing another year
+  replaces the visible News rows without affecting publication filters.
+- Preserved progressive enhancement: all News remains readable when JavaScript
+  is unavailable.
+- Extended site verification to require the News filtering hooks and every year
+  represented in `news.yml`.
+
+### 2026-09-05 — Cleaner section titles and sourced News links
+
+- Removed the small pre-title labels from Bio, News, Publications, Preprints,
+  Funding, Service, and Contact; the hero research-direction eyebrow remains.
+- Added a relevant destination to all eight News records, prioritizing official
+  journal, conference, schedule, and project pages.
+- Made linked News titles open their sources in a new tab and added a restrained
+  external-link indicator and hover/focus treatment.
+- Extended verification so every News item must have a valid URL and obsolete
+  section-kicker labels cannot reappear unnoticed.
 
 ## 12. Social-preview generation record
 

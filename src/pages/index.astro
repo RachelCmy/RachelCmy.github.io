@@ -21,7 +21,7 @@ type Profile = {
 };
 
 type NewsItem = {
-  date: string;
+  date: string | number;
   type: string;
   title: string;
   detail?: string;
@@ -54,6 +54,8 @@ const news = loadYaml<NewsItem[]>("../data/news.yml");
 const fundings = loadYaml<Funding[]>("../data/fundings.yml");
 const service = loadYaml<Service[]>("../data/service.yml");
 const publications = loadPublications();
+const newsYears = [...new Set(news.map((item) => String(item.date)))].sort((a, b) => Number(b) - Number(a));
+const latestNewsYear = newsYears[0] ?? "";
 const publishedPublications = publications.filter((publication) => !publication.preprint);
 const preprints = publications.filter((publication) => publication.preprint);
 const years = [...new Set(publishedPublications.map((publication) => publication.year).filter(Boolean))].sort((a, b) => b - a);
@@ -160,7 +162,6 @@ const navigation = [
       <section class="section shell bio-section" id="about" aria-labelledby="about-title">
         <div class="section-heading section-heading--compact">
           <div>
-            <p class="section-kicker">Profile</p>
             <h2 id="about-title">Bio</h2>
           </div>
         </div>
@@ -190,17 +191,28 @@ const navigation = [
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Recent updates</p>
               <h2 id="news-title">News</h2>
             </div>
           </div>
+          <div class="news-year-nav" role="group" aria-label="News year">
+            {newsYears.map((year) => (
+              <button
+                class:list={["filter-button", { "is-active": year === latestNewsYear }]}
+                type="button"
+                data-news-year={year}
+                aria-pressed={year === latestNewsYear ? "true" : "false"}
+              >
+                {year}<span>{news.filter((item) => String(item.date) === year).length}</span>
+              </button>
+            ))}
+          </div>
           <div class="news-list">
             {news.map((item) => (
-              <article class="news-item">
+              <article class="news-item" data-news-item data-news-year={String(item.date)}>
                 <time>{item.date}</time>
                 <div>
                   <span class="tag">{item.type}</span>
-                  <h3>{item.link ? <a href={item.link}>{item.title}</a> : item.title}</h3>
+                  <h3>{item.link ? <a href={item.link} target="_blank" rel="noreferrer">{item.title}<span aria-hidden="true"> ↗</span></a> : item.title}</h3>
                   {item.detail && <p>{item.detail}</p>}
                 </div>
               </article>
@@ -213,7 +225,6 @@ const navigation = [
         <div class="shell">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Research output</p>
               <h2 id="publications-title">Publications</h2>
             </div>
           </div>
@@ -242,7 +253,6 @@ const navigation = [
         <div class="shell">
           <div class="section-heading section-heading--compact">
             <div>
-              <p class="section-kicker">Work in progress</p>
               <h2 id="preprints-title">Preprints</h2>
             </div>
           </div>
@@ -255,7 +265,6 @@ const navigation = [
       <section class="section shell funding-section" id="funding" aria-labelledby="funding-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Research support</p>
             <h2 id="funding-title">Funding</h2>
           </div>
         </div>
@@ -282,7 +291,6 @@ const navigation = [
       <section class="section shell service-section" id="service" aria-labelledby="service-title">
         <div class="section-heading section-heading--compact">
           <div>
-            <p class="section-kicker">Academic community</p>
             <h2 id="service-title">Service</h2>
           </div>
         </div>
@@ -313,7 +321,6 @@ const navigation = [
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="shell contact-grid">
           <div>
-            <p class="section-kicker">Get in touch</p>
             <h2 id="contact-title">Research conversations are welcome.</h2>
           </div>
           <div class="contact-details">
@@ -338,6 +345,28 @@ const navigation = [
 </html>
 
 <script>
+  const newsYearButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-news-year]:not([data-news-item])"));
+  const newsItems = Array.from(document.querySelectorAll<HTMLElement>("[data-news-item]"));
+
+  const showNewsYear = (year: string) => {
+    newsItems.forEach((item) => {
+      item.hidden = item.dataset.newsYear !== year;
+    });
+    newsYearButtons.forEach((button) => {
+      const active = button.dataset.newsYear === year;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  const initialNewsYear = newsYearButtons.find((button) => button.classList.contains("is-active"))?.dataset.newsYear;
+  if (initialNewsYear) showNewsYear(initialNewsYear);
+  newsYearButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.newsYear) showNewsYear(button.dataset.newsYear);
+    });
+  });
+
   const scopeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-scope]"));
   const yearFilter = document.querySelector<HTMLSelectElement>("[data-year-filter]");
   const publicationCards = Array.from(document.querySelectorAll<HTMLElement>("#publications [data-publication]"));

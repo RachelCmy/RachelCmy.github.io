@@ -14,6 +14,7 @@ if (bibKeys.length === 0) fail("No BibTeX entries were found in works.bib.");
 const enhancements = parseYaml(readFileSync(resolve(root, "src/data/publications.yml"), "utf8"));
 const authorProfiles = parseYaml(readFileSync(resolve(root, "src/data/authors.yml"), "utf8"));
 const fundings = parseYaml(readFileSync(resolve(root, "src/data/fundings.yml"), "utf8"));
+const news = parseYaml(readFileSync(resolve(root, "src/data/news.yml"), "utf8"));
 const enhancementKeys = enhancements.map((item) => item.bibkey);
 const duplicateKeys = enhancementKeys.filter((key, index) => enhancementKeys.indexOf(key) !== index);
 if (duplicateKeys.length > 0) fail(`Duplicate publication enhancement keys: ${[...new Set(duplicateKeys)].join(", ")}`);
@@ -67,6 +68,21 @@ if (renderedCards !== bibKeys.length) fail(`Rendered ${renderedCards} publicatio
 for (const anchor of ["about", "news", "publications", "preprints", "funding", "service", "contact"]) {
   if (!html.includes(`id="${anchor}"`)) fail(`Missing required section: ${anchor}`);
 }
+
+const newsYears = [...new Set(news.map((item) => String(item.date)))];
+for (const item of news) {
+  if (!item.link) fail(`Missing link for News item: ${item.title}`);
+  try {
+    new URL(item.link);
+  } catch {
+    fail(`Invalid News URL for ${item.title}: ${item.link}`);
+  }
+}
+for (const year of newsYears) {
+  if (!html.includes(`data-news-year="${year}"`)) fail(`Missing News year control: ${year}`);
+}
+if (!html.includes("data-news-item")) fail("News year filtering hooks are missing.");
+if (html.includes("section-kicker")) fail("Obsolete section kicker labels are still rendered.");
 
 for (const requiredFile of ["og.png", "favicon.svg", "robots.txt", "sitemap.xml", "googlec7da58c40c184745.html"]) {
   if (!existsSync(resolve(root, "dist", requiredFile))) fail(`Missing generated public file: ${requiredFile}`);

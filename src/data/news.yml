@@ -2,23 +2,39 @@
   type: Service
   title: Serving as Associate Editor for Graphical Models.
   detail: Graphical Models — Elsevier journal on 3D geometric modeling & shape processing; CCF-B.
+  link: https://www.sciencedirect.com/journal/graphical-models/about/editorial-board
 - date: 2026
   type: Publication
   title: 3 papers appear in the SIGGRAPH 2026
   detail: LagrangianSplats, Robustness Parametric Surface CCD， and LoBoFit explore fluid reconstruction， floating-point-robust CCD, and flexible garment refitting.
+  link: https://s2026.siggraph.org/program/technical-papers/
 - date: 2026
   type: Publication
   title: FieryGS appears at ICLR 2026.
   detail: Physics-integrated Gaussian splatting for in-the-wild fire synthesis.
+  link: https://pku-vcl-geometry.github.io/FieryGS/
 - date: 2026
   type: Service
   title: Serving as Program Co-Chair for SCA 2026.
   detail: Symposium on Computer Animation.
+  link: https://computeranimation.org/people.html
+- date: 2025
+  type: Service
+  title: Serving as Workshop Co-Chair for CAD/Graphics 2025.
+  detail: China-Israel Symposium on Emerging Graphics Technologies — excited to bring together researchers and foster new collaborations!
+  link: https://cadgraphics2025.sdtbu.edu.cn/info/10065/85989.htm
+- date: 2025
+  type: Talk
+  title: Keynote Speaker at the SIGGRAPH 2025 Technical Workshop.
+  detail: Invited keynote at "Reduced-Order Modeling for Physical Simulation" — excited to share our perspectives on making real-world simulation ready!
+  link: https://s2025.conference-schedule.org/presentation/?id=twork_108&sess=sess279
 - date: 2025
   type: Publication
   title: 2 papers appear in the SIGGRAPH 2025.
   detail: Gaussians can be used for forward fluid simulation (Gaussian Fluids) as well as real-time VR interaction (VR-Doh)!
+  link: https://s2025.siggraph.org/program/technical-papers/
 - date: 2025
   type: Publication
   title: RainyGS appears at CVPR 2025.
   detail: Efficient rain synthesis in physically based Gaussian splatting.
+  link: https://pku-vcl-geometry.github.io/RainyGS/
