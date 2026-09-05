@@ -1,0 +1,122 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import { loadYaml } from "../lib/content";
+import "../styles/global.css";
+
+type TeamMember = {
+  name: string;
+  role: string;
+  url?: string;
+  image?: string;
+  imageSource?: string;
+  objectPosition?: string;
+};
+
+type TeamGroup = {
+  id: string;
+  title: string;
+  description: string;
+  members: TeamMember[];
+};
+
+const groups = loadYaml<TeamGroup[]>("../data/team.yml");
+const pageTitle = "Team · Mengyu (Rachel) Chu";
+const description = "Students, VCL colleagues, faculty partners, and research collaborators working with Mengyu Chu.";
+const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Mengyu Chu" />
+    <meta name="theme-color" content="#f4f1eb" />
+    <link rel="canonical" href="https://rachelcmy.github.io/team/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://rachelcmy.github.io/team/" />
+    <meta property="og:image" content="https://rachelcmy.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="team-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader current="team" />
+
+    <main id="main">
+      <section class="team-hero shell" id="top" aria-labelledby="team-title">
+        <div>
+          <p class="eyebrow">Visual Computing · Physical Intelligence</p>
+          <h1 id="team-title">Team</h1>
+        </div>
+        <div class="team-intro">
+          <p>Students, colleagues, and collaborators advancing physical simulation and simulation-ready intelligence.</p>
+          <nav aria-label="Team groups">
+            {groups.map((group) => <a href={`#${group.id}`}>{group.title}<span>{group.members.length}</span></a>)}
+          </nav>
+        </div>
+      </section>
+
+      {groups.map((group, groupIndex) => (
+        <section class:list={["team-group", { "team-group--tinted": groupIndex % 2 === 0 }]} id={group.id} aria-labelledby={`${group.id}-title`}>
+          <div class="shell">
+            <div class="team-group-heading">
+              <div>
+                <p class="team-group-index">{String(groupIndex + 1).padStart(2, "0")}</p>
+                <h2 id={`${group.id}-title`}>{group.title}</h2>
+              </div>
+              <p>{group.description}</p>
+            </div>
+            <div class="people-grid">
+              {group.members.map((member) => (
+                <article class="person-card">
+                  <div class:list={["person-image", { "person-image--fallback": !member.image }]}>
+                    {member.image ? (
+                      <img
+                        src={member.image}
+                        alt={`Portrait of ${member.name}`}
+                        width="640"
+                        height="640"
+                        loading="lazy"
+                        style={member.objectPosition ? `object-position: ${member.objectPosition}` : undefined}
+                      />
+                    ) : (
+                      <span aria-hidden="true">{initials(member.name)}</span>
+                    )}
+                  </div>
+                  <div class="person-copy">
+                    <h3>
+                      {member.url ? (
+                        <a href={member.url} target="_blank" rel="noreferrer">{member.name}<span aria-hidden="true"> ↗</span></a>
+                      ) : member.name}
+                    </h3>
+                    <p>{member.role}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <p>© {new Date().getFullYear()} Mengyu Chu</p>
+        <p>Visual Computing and Learning Lab · Peking University</p>
+        <a href="/#top">Back to homepage ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobile-menu");
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => mobileMenu.removeAttribute("open"));
+  });
+</script>

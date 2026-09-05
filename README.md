@@ -15,12 +15,14 @@ The site is built with Astro and generated as static HTML for GitHub Pages. Its 
 | Publication title, authors, venue, DOI | `works.bib` |
 | Publication media, summary, tags, links | `src/data/publications.yml` |
 | Author homepage links and aliases | `src/data/authors.yml` |
+| Team groups, roles, links, and portraits | `src/data/team.yml` |
 
 ### Add a publication
 
 1. Add the BibTeX entry to `works.bib`. Include `date = {YYYY-MM-DD}` when
    available, or at least `month`, so publications within the same year follow
-   calendar order; records without either are placed last in that year.
+   newest-first calendar order; records without either are placed last in that
+   year.
 2. Add a matching item to `src/data/publications.yml` using the same BibTeX key.
 3. Add a compact `venueShort` label for the card badge (for example,
    `SIGGRAPH 2026`), and set `preprint: true` while the work belongs in the
@@ -32,6 +34,14 @@ The site is built with Astro and generated as static HTML for GitHub Pages. Its 
 A publication without custom media is rendered with a designed fallback panel. A publication without a custom Paper link uses its DOI or source URL automatically.
 
 Author links are maintained once in `src/data/authors.yml`. Add an abbreviated BibTeX form to `aliases` when the same author appears with initials in another record.
+
+### Update the Team page
+
+Edit `src/data/team.yml` to add, remove, or regroup people. A member needs
+`name` and `role`; `url`, `image`, `imageSource`, and `objectPosition` are
+optional. Keep locally stored portraits under `public/media/team/` and retain
+the public source URL in `imageSource`. Without a verified portrait, the card
+automatically uses the person's initials.
 
 ### Add news
 

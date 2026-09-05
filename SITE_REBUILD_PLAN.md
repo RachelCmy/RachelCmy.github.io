@@ -326,16 +326,32 @@ Validation results for this refinement:
 - Reduced section top padding so the whitespace before every module title is
   tighter while preserving clear separation between content blocks.
 - Changed publication ordering to year descending and, within each year,
-  calendar date ascending. Explicit `date` values take priority, then `month`;
+  calendar date descending. Explicit `date` values take priority, then `month`;
   entries without either appear last in their year.
 - Added April metadata to the 2025 and 2026 ICLR entries so they correctly
-  precede the corresponding summer SIGGRAPH publications.
+  follow the corresponding summer SIGGRAPH publications.
 - Confirmed that `works.bib` remains the primary source for publication titles,
   authors, venues, years, dates, DOI, and source URLs; `publications.yml` only
   augments those records with display metadata, summaries, media, and extra
   links.
 - Removed the YouTube profile link from the hero, contact links, and structured
   profile metadata.
+
+### 2026-09-05 — Team page
+
+- Added a dedicated, fully English `/team/` route and a shared site header so
+  Team is available from both desktop and mobile navigation.
+- Organized 25 people into VCL Physics Group Collaborators, Ph.D. Students,
+  VCL Faculty Collaborators, and Other Collaborators, preserving the supplied
+  order and alumni years.
+- Linked verified personal or institutional profiles where available. Used the
+  official VCL roster or DBLP profile only as a conservative fallback, and left
+  uncertain same-name results unlinked.
+- Added 12 portraits from personal or official university pages, compressed to
+  local WebP assets. Members without a trustworthy portrait use a consistent
+  initials treatment rather than an invented or mismatched photo.
+- Added Team data and asset checks, route verification, homepage navigation
+  verification, and a same-year descending-publication-order assertion.
 
 ## 12. Social-preview generation record
 

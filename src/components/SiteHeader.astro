@@ -1,0 +1,37 @@
+---
+type Props = {
+  current?: "home" | "team";
+};
+
+const { current = "home" } = Astro.props;
+const homeAnchor = (anchor: string) => current === "home" ? anchor : `/${anchor}`;
+const navigation = [
+  ["About", homeAnchor("#about")],
+  ["News", homeAnchor("#news")],
+  ["Publications", homeAnchor("#publications")],
+  ["Preprints", homeAnchor("#preprints")],
+  ["Funding", homeAnchor("#funding")],
+  ["Service", homeAnchor("#service")],
+  ["Team", "/team/"],
+  ["Contact", homeAnchor("#contact")],
+];
+---
+
+<header class="site-header">
+  <div class="shell nav-wrap">
+    <a class="wordmark" href={current === "home" ? "#top" : "/#top"} aria-label="Mengyu Chu home">MC<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {navigation.map(([label, href]) => (
+        <a href={href} aria-current={label === "Team" && current === "team" ? "page" : undefined}>{label}</a>
+      ))}
+    </nav>
+    <details class="mobile-menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        {navigation.map(([label, href]) => (
+          <a href={href} aria-current={label === "Team" && current === "team" ? "page" : undefined}>{label}</a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>

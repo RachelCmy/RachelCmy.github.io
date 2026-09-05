@@ -273,8 +273,8 @@ function sortablePublicationDate(fields: Record<string, string>, year: number): 
     ? numericMonth
     : monthNumbers[rawMonth];
 
-  // Unknown months sort after dated records within the same year.
-  return year ? `${year}-${String(month ?? 13).padStart(2, "0")}-01` : "0000-13-01";
+  // Unknown months sort after dated records when the year is ordered newest-first.
+  return year ? `${year}-${String(month ?? 0).padStart(2, "0")}-01` : "0000-00-01";
 }
 
 function makeMonogram(title: string): string {
@@ -350,5 +350,5 @@ export function loadPublications(): Publication[] {
       } satisfies Publication;
     })
     .filter((publication) => publication.title && publication.authors.length > 0)
-    .sort((left, right) => right.year - left.year || left.date.localeCompare(right.date) || left.title.localeCompare(right.title));
+    .sort((left, right) => right.year - left.year || right.date.localeCompare(left.date) || left.title.localeCompare(right.title));
 }

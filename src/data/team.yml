@@ -1,0 +1,116 @@
+- id: vcl-physics
+  title: VCL Physics Group Collaborators
+  description: Current collaborators and alumni from the physics group at the Visual Computing and Learning Lab.
+  members:
+    - name: Xingyu Ni
+      role: Alumni · Ph.D. 2025
+      url: https://starryuniv.cn/
+      image: /media/team/xingyu-ni.card.webp
+      imageSource: https://starryuniv.cn/images/avatar.jpg
+    - name: Liangwang Ruan
+      role: Alumni · Ph.D. 2026
+      url: https://lwruan.com/
+      image: /media/team/liangwang-ruan.card.webp
+      imageSource: https://lwruan.com/assets/images/avatar.png
+    - name: Xuwen Chen
+      role: VCL Physics Group
+      url: https://xw-c.github.io/
+      image: /media/team/xuwen-chen.card.webp
+      imageSource: https://xw-c.github.io/author/xuwen-chen/avatar_hu4f316f24dac8c9b3311cf56b488b95d4_739985_270x270_fill_q90_lanczos_center.jpg
+    - name: Xingqiao Li
+      role: VCL Physics Group
+      url: https://li-xingqiao.github.io/
+      image: /media/team/xingqiao-li.card.webp
+      imageSource: https://li-xingqiao.github.io/photo.jpg
+    - name: Jingrui Xing
+      role: VCL Physics Group
+      url: https://xjr01.github.io/
+      image: /media/team/jingrui-xing.card.webp
+      imageSource: https://xjr01.github.io/images/profile.png
+    - name: Ningxiao Tao
+      role: VCL Physics Group
+      url: https://taoningxiao.github.io/
+      image: /media/team/ningxiao-tao.card.webp
+      imageSource: https://taoningxiao.github.io/images/profile.png
+    - name: Zehao Xue
+      role: VCL Physics Group
+      url: https://vcl.pku.edu.cn/team
+    - name: Yizao Tang
+      role: VCL Physics Group
+      url: https://dblp.org/pid/405/1173
+    - name: Bingrui Gong
+      role: VCL Physics Group
+
+- id: phd-students
+  title: Ph.D. Students · VCL Physics Group
+  description: Ph.D. students working with me on physical simulation and simulation-ready intelligence.
+  members:
+    - name: Siqi Qiao
+      role: Ph.D. Student
+      url: https://vcl.pku.edu.cn/team
+    - name: Cheng Yu
+      role: Ph.D. Student
+      url: https://vcl.pku.edu.cn/team
+    - name: Tianhong Gao
+      role: Ph.D. Student
+      url: https://vcl.pku.edu.cn/team
+    - name: Nuoming Liu
+      role: Ph.D. Student
+      url: https://vcl.pku.edu.cn/team
+    - name: Liru Zhang
+      role: Ph.D. Student
+      url: https://dblp.org/pid/84/7967.html
+    - name: Junyu Wang
+      role: Ph.D. Student
+      url: https://vcl.pku.edu.cn/team
+    - name: Xuxuan He
+      role: Ph.D. Student
+    - name: Ziyi Liu
+      role: Ph.D. Student
+
+- id: vcl-faculty
+  title: VCL Faculty Collaborators
+  description: Faculty collaborators across graphics, simulation, vision, and spatial intelligence.
+  members:
+    - name: Baoquan Chen
+      role: Professor · Peking University
+      url: https://baoquanchen.info/
+      image: /media/team/baoquan-chen.card.webp
+      imageSource: https://cfcs.pku.edu.cn/baoquan/docs/2021-08/20210807171132313456.jpg
+    - name: Libin Liu
+      role: Assistant Professor · Peking University
+      url: https://cfcs.pku.edu.cn/libinliu/
+      image: /media/team/libin-liu.card.webp
+      imageSource: https://cis.pku.edu.cn/__local/4/68/52/7936B48D8B226C14EF8AC26C2B1_7E465396_1582A9.png
+    - name: Wenzheng Chen
+      role: Assistant Professor · Peking University
+      url: https://wenzhengchen.github.io/
+      image: /media/team/wenzheng-chen.card.webp
+      imageSource: https://wenzhengchen.github.io/images/7341614762140.webp
+    - name: Peng-Shuai Wang
+      role: Assistant Professor · Peking University
+      url: https://wang-ps.github.io/
+      image: /media/team/pengshuai-wang.card.webp
+      imageSource: https://wang-ps.github.io/images/me.jpg
+      objectPosition: 28% center
+
+- id: collaborators
+  title: Other Collaborators
+  description: Long-term research collaborators in physical simulation, learning, and computational graphics.
+  members:
+    - name: Nils Thuerey
+      role: Professor · Technical University of Munich
+      url: https://ge.in.tum.de/about/n-thuerey/
+      image: /media/team/nils-thuerey.card.webp
+      imageSource: https://ge.in.tum.de/wp-content/uploads/2025/09/nils-sm01-e1758097450849.jpg
+    - name: Meng Zhang
+      role: Research Collaborator
+      url: https://mengzephyr.com/
+    - name: Kui Wu
+      role: Research Collaborator
+      url: https://kuiwuchn.github.io/
+      image: /media/team/kui-wu.card.webp
+      imageSource: https://kuiwuchn.github.io/kwu.jpg
+    - name: Wei Li
+      role: Research Collaborator
+      url: https://lwkobe.github.io/

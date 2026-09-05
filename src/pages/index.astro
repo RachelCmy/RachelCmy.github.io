@@ -1,5 +1,6 @@
 ---
 import PublicationCard from "../components/PublicationCard.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import { loadPublications, loadYaml } from "../lib/content";
 import "../styles/global.css";
 
@@ -83,15 +84,6 @@ const personSchema = {
   knowsAbout: profile.interests,
 };
 
-const navigation = [
-  ["About", "#about"],
-  ["News", "#news"],
-  ["Publications", "#publications"],
-  ["Preprints", "#preprints"],
-  ["Funding", "#funding"],
-  ["Service", "#service"],
-  ["Contact", "#contact"],
-];
 ---
 
 <!doctype html>
@@ -122,20 +114,7 @@ const navigation = [
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="shell nav-wrap">
-        <a class="wordmark" href="#top" aria-label="Back to top">MC<span>.</span></a>
-        <nav class="desktop-nav" aria-label="Primary navigation">
-          {navigation.map(([label, href]) => <a href={href}>{label}</a>)}
-        </nav>
-        <details class="mobile-menu">
-          <summary>Menu</summary>
-          <nav aria-label="Mobile navigation">
-            {navigation.map(([label, href]) => <a href={href}>{label}</a>)}
-          </nav>
-        </details>
-      </div>
-    </header>
+    <SiteHeader current="home" />
 
     <main id="main">
       <section class="hero shell" id="top" aria-labelledby="hero-title">

@@ -103,8 +103,19 @@ video {
 }
 
 .desktop-nav a:hover,
-.desktop-nav a:focus-visible {
+.desktop-nav a:focus-visible,
+.desktop-nav a[aria-current="page"] {
   color: var(--accent);
+}
+
+.desktop-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.55rem;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
 }
 
 .mobile-menu {
@@ -837,6 +848,188 @@ h1 span {
   font-size: 0.72rem;
 }
 
+.team-hero {
+  min-height: 54vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  padding-block: clamp(5rem, 10vw, 9rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.team-hero h1 {
+  margin: 0;
+  font-size: clamp(5rem, 11vw, 9rem);
+}
+
+.team-intro > p {
+  max-width: 680px;
+  margin-bottom: 2.2rem;
+  font: 500 clamp(1.3rem, 2.2vw, 1.75rem)/1.5 var(--serif);
+}
+
+.team-intro nav {
+  border-top: 1px solid var(--line);
+}
+
+.team-intro nav a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.team-intro nav a:hover,
+.team-intro nav a:focus-visible {
+  color: var(--accent);
+}
+
+.team-intro nav span {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.team-group {
+  scroll-margin-top: 4.5rem;
+  padding-block: clamp(4rem, 7vw, 6.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.team-group--tinted {
+  background: var(--paper-deep);
+}
+
+.team-group-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.team-group-index {
+  margin-bottom: 0.65rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.team-group-heading h2 {
+  margin: 0;
+  font: 600 clamp(2.25rem, 4vw, 3.7rem)/1 var(--serif);
+  letter-spacing: -0.045em;
+}
+
+.team-group-heading > p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.person-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--white);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.person-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.person-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #ddd6cc;
+}
+
+.person-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.02);
+  transition: filter 180ms ease, transform 260ms ease;
+}
+
+.person-card:hover .person-image img {
+  filter: saturate(1) contrast(1.02);
+  transform: scale(1.015);
+}
+
+.person-image--fallback {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #d6cec2, #eee9e1 58%, #c9b9b7);
+  color: var(--accent);
+}
+
+.person-image--fallback::before,
+.person-image--fallback::after {
+  content: "";
+  position: absolute;
+  width: 66%;
+  height: 1px;
+  background: color-mix(in srgb, var(--accent) 34%, transparent);
+  transform: rotate(-23deg);
+}
+
+.person-image--fallback::after {
+  transform: rotate(31deg);
+}
+
+.person-image--fallback span {
+  z-index: 1;
+  font: 500 clamp(2.8rem, 5vw, 4.8rem)/1 var(--serif);
+  letter-spacing: -0.07em;
+}
+
+.person-copy {
+  min-height: 116px;
+  padding: 1rem 1.05rem 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.person-copy h3 {
+  margin-bottom: 0.35rem;
+  font: 600 clamp(1.15rem, 1.7vw, 1.4rem)/1.25 var(--serif);
+  letter-spacing: -0.025em;
+}
+
+.person-copy h3 a {
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+}
+
+.person-copy h3 a:hover,
+.person-copy h3 a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.person-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
 .contact-section {
   padding-block: clamp(5rem, 9vw, 8rem);
   background: var(--accent);
@@ -916,9 +1109,20 @@ h1 span {
 
   .contact-grid,
   .section-heading,
-  .about-grid {
+  .about-grid,
+  .team-hero,
+  .team-group-heading {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .team-hero {
+    min-height: 0;
+    align-items: start;
+  }
+
+  .people-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .funding-grid {
@@ -990,6 +1194,10 @@ h1 span {
     text-decoration: none;
   }
 
+  .mobile-menu nav a[aria-current="page"] {
+    color: var(--accent);
+  }
+
   h1 {
     font-size: clamp(3.4rem, 18vw, 5rem);
   }
@@ -1040,6 +1248,16 @@ h1 span {
 
   .service-venues {
     grid-template-columns: 1fr;
+  }
+
+  .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .person-copy {
+    min-height: 108px;
+    padding: 0.85rem;
   }
 
   .site-footer .shell {
