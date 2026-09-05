@@ -1,0 +1,375 @@
+# Optional presentation data keyed to entries in works.bib. Bibliographic facts
+# stay in works.bib; this file holds the information that makes the website rich.
+
+- bibkey: lens.org/199-616-567-446-912
+  venueShort: SIGGRAPH 2026
+  selected: true
+  topics: [Physical Simulation, Gaussian Splatting, Reconstruction]
+  media:
+    type: image
+    src: /media/publications/lagrangian-splats/teaser.png
+    alt: LagrangianSplats fluid reconstruction and velocity-field teaser
+  links:
+    - label: Project
+      url: https://taoningxiao.github.io/lagrangiansplats/
+    - label: Paper
+      url: https://arxiv.org/abs/2605.09299
+    - label: Code
+      url: https://github.com/taoningxiao/LagrangianSplats
+    - label: Dataset
+      url: https://huggingface.co/datasets/tnx123/LagrangianSplats-Dataset
+
+- bibkey: lens.org/192-096-884-870-732
+  venueShort: SIGGRAPH 2026
+  topics: [Geometry, Garment Modeling]
+  media:
+    type: image
+    src: /media/publications/lobofit/teaser.png
+    alt: LoBoFit garments refitted across avatars with different body shapes
+  links:
+    - label: Project
+      url: https://github.com/MengZephyr/LoBoFit
+    - label: Paper
+      url: https://arxiv.org/abs/2605.07450
+    - label: Code
+      url: https://github.com/MengZephyr/LoBoFit
+
+- bibkey: Chen_2026
+  venueShort: SIGGRAPH 2026
+  selected: true
+  topics: [Geometry, Collision Detection]
+  media:
+    type: image
+    src: /media/publications/robust-ccd/featured.jpg
+    alt: Parametric-surface collision detection benchmark examples
+  links:
+    - label: Project
+      url: https://xw-c.github.io/publication/sig26/
+    - label: Paper
+      url: https://xw-c.github.io/publications/sig26CCDdataset.pdf
+    - label: Code
+      url: https://github.com/xw-c/TDIB-E
+
+- bibkey: lens.org/175-267-993-392-992
+  preprint: true
+  venueShort: arXiv 2026
+  topics: [Physical Simulation, Articulated Objects]
+  media:
+    type: image
+    src: /media/publications/joda/pipeline.png
+    alt: JODA pipeline for composable articulated-object joint dynamics
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/2605.09954
+
+- bibkey: lens.org/191-564-530-386-642
+  preprint: true
+  venueShort: arXiv 2026
+  topics: [Physical Simulation, GPU Computing]
+  media:
+    type: image
+    src: /media/publications/adaptive-gpu/teaser.jpg
+    alt: Large-scale fluid and granular simulation examples
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/2603.14982
+
+- bibkey: lens.org/079-610-126-905-45X
+  preprint: true
+  venueShort: arXiv 2026
+  topics: [Physical Simulation, Fluids]
+  media:
+    type: image
+    src: /media/publications/ddfks/teaser.png
+    alt: Dynamic divergence-free kernel fluid simulation visualization
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/2601.17693
+
+- bibkey: shen2026fierygs
+  venueShort: ICLR 2026
+  selected: true
+  summary: >-
+    A physics-integrated Gaussian representation for synthesizing dynamic fire
+    from unconstrained observations.
+  topics: [Gaussian Splatting, Physics-enhanced Learning]
+  media:
+    type: image
+    src: /media/publications/fierygs/teaser.png
+    alt: FieryGS fire synthesis in reconstructed real-world scenes
+  links:
+    - label: Project
+      url: https://pku-vcl-geometry.github.io/FieryGS/
+    - label: Paper
+      url: https://arxiv.org/abs/2605.00177
+    - label: Code
+      url: https://github.com/PKU-VCL-Geometry/FieryGS
+
+- bibkey: Tao_2025
+  venueShort: Pacific Graphics 2025
+  topics: [Reconstruction, Fluids]
+  media:
+    type: image
+    src: /media/publications/flowcapx/teaser.png
+    alt: FlowCapX flow reconstruction, analysis, and re-simulation teaser
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/2510.23122
+    - label: Code
+      url: https://github.com/taoningxiao/FlowCapX
+
+- bibkey: Luo_2025
+  venueShort: SIGGRAPH 2025
+  topics: [Virtual Reality, Geometry]
+  media:
+    type: image
+    src: /media/publications/vr-doh/teaser.jpg
+    alt: VR-Doh hands-on modeling and object-editing examples
+  links:
+    - label: Project
+      url: https://simulation-intelligence.github.io/VR-Doh/
+    - label: Paper
+      url: https://arxiv.org/abs/2412.00814
+    - label: Code
+      url: https://github.com/Simulation-Intelligence/VR-Doh
+
+- bibkey: lens.org/131-378-920-567-857
+  venueShort: SIGGRAPH 2025
+  selected: true
+  summary: >-
+    A grid-free fluid solver that uses Gaussian primitives as a continuous
+    spatial representation.
+  topics: [Physical Simulation, Gaussian Splatting, Fluids]
+  media:
+    type: image
+    src: /media/publications/gaussian-fluids/teaser.jpg
+    alt: Gaussian Fluids vortex-ring simulation
+  links:
+    - label: Project
+      url: https://xjr01.github.io/GaussianFluids
+    - label: Paper
+      url: https://xjr01.github.io/files/GaussianFluids.pdf
+    - label: Code
+      url: https://github.com/xjr01/Gaussian-Fluids-Code
+
+- bibkey: lens.org/121-617-275-326-534
+  venueShort: CVPR 2025
+  selected: true
+  summary: >-
+    A physically based Gaussian-splatting system for efficient and controllable
+    rain synthesis.
+  topics: [Gaussian Splatting, Visual Effects]
+  media:
+    type: image
+    src: /media/publications/rainygs/2025_RainyGS.gif
+    alt: RainyGS controllable rain synthesis at multiple intensities
+  links:
+    - label: Project
+      url: https://pku-vcl-geometry.github.io/RainyGS/
+    - label: Paper
+      url: https://arxiv.org/abs/2503.21442
+
+- bibkey: liu2025config
+  venueShort: ICLR 2025 Spotlight
+  selected: true
+  topics: [Physics-informed Learning, Optimization]
+  media:
+    type: image
+    src: /media/publications/config/preview.png
+    alt: ConFIG conflict-free gradient optimization diagram
+  links:
+    - label: Project
+      url: https://tum-pbs.github.io/ConFIG/
+    - label: Paper
+      url: https://openreview.net/forum?id=APojAzJQiq
+    - label: Code
+      url: https://github.com/tum-pbs/ConFIG
+
+- bibkey: https://doi.org/10.2312/pg.20251268
+  venueShort: Pacific Graphics 2025
+  topics: [Physical Simulation, Fluid-solid Coupling]
+  media:
+    type: image
+    src: /media/publications/fast-mbcui/featured.png
+    alt: Underwater multi-body coupling and grasping simulation
+  links:
+    - label: Project
+      url: https://xw-c.github.io/publication/pg2025/
+    - label: Paper
+      url: https://xw-c.github.io/publications/pg2025underwaterbem.pdf
+    - label: Code
+      url: https://github.com/guesss2022/fastMBCUI
+
+- bibkey: Chen_2024
+  venueShort: SIGGRAPH Asia 2024
+  topics: [Geometry, Collision Detection]
+  media:
+    type: image
+    src: /media/publications/tdib-ccd/featured.jpg
+    alt: Bunny and torus continuous collision detection example
+  links:
+    - label: Project
+      url: https://xw-c.github.io/publication/siga24/
+    - label: Paper
+      url: https://xw-c.github.io/publications/siga24TDIF.pdf
+    - label: Code
+      url: https://github.com/xw-c/TDIB-CCD
+    - label: Supplement
+      url: https://xw-c.github.io/publications/siga24TDIF-supplementary.pdf
+
+- bibkey: Wang_2024
+  venueShort: SIGGRAPH 2024
+  selected: true
+  summary: >-
+    This work reconstructs temporally coherent smoke by learning characteristic
+    trajectories while respecting the governing physics.
+  topics: [Reconstruction, Physics-informed Learning, Fluids]
+  media:
+    type: video
+    src: /media/publications/pict/path_crop.mp4
+    alt: Characteristic trajectories moving through a reconstructed smoke volume
+  links:
+    - label: Project
+      url: https://19reborn.github.io/PICT_Smoke.github.io/
+    - label: Video
+      url: https://youtu.be/DXQO4E-ShbI
+    - label: Code
+      url: https://github.com/19reborn/PICT_smoke
+    - label: Paper
+      url: https://dl.acm.org/doi/10.1145/3641519.3657483
+
+- bibkey: Chu_2022
+  venueShort: SIGGRAPH 2022
+  selected: true
+  summary: >-
+    Neural fields and physical constraints work together to reconstruct dynamic
+    smoke from sparse multi-view observations.
+  topics: [Reconstruction, Neural Fields, Fluids]
+  media:
+    type: video
+    src: /media/publications/pinf/carout1.mp4
+    alt: Sparse-view neural smoke reconstruction result
+  links:
+    - label: Project
+      url: https://rachelcmy.github.io/pinf_smoke/
+    - label: Results
+      url: https://rachelcmy.github.io/pinf_smoke/ClickMe.html
+    - label: Code
+      url: https://github.com/RachelCmy/pinf_smoke
+    - label: Paper
+      url: https://rachelcmy.github.io/pinf_smoke/data/paper.pdf
+
+- bibkey: lens.org/086-373-421-561-757
+  venueShort: SIGGRAPH 2021
+  selected: true
+  year: 2021
+  summary: >-
+    The method learns compact, meaningful controls that make complex fluid
+    motion easier to navigate and manipulate.
+  topics: [Physical Simulation, Control, Fluids]
+  media:
+    type: video
+    src: /media/publications/learning-controls/smokeout1.mp4
+    alt: Controlled smoke simulation preview
+  links:
+    - label: Project
+      url: https://rachelcmy.github.io/den2vel/
+    - label: Video
+      url: https://youtu.be/D2derqY9JIA
+    - label: Code
+      url: https://github.com/RachelCmy/den2vel/
+    - label: Paper
+      url: https://doi.org/10.1145/3476576.3476661
+
+- bibkey: lens.org/090-286-512-052-201
+  venueShort: IEEE TVCG 2021
+  topics: [Visualization, Super-resolution]
+  media:
+    type: image
+    src: /media/publications/other/others.png
+    alt: Collection of learning-based visualization results
+  links:
+    - label: Paper
+      url: https://arxiv.org/abs/1906.06520
+    - label: Code
+      url: https://github.com/shamanDevel/IsosurfaceSuperresolution
+    - label: Video
+      url: https://youtu.be/l-SzWAfPVcA
+
+- bibkey: Chu_2020
+  venueShort: SIGGRAPH 2020
+  selected: true
+  summary: >-
+    A self-supervised temporal objective improves video consistency without
+    requiring paired temporal supervision.
+  topics: [Video Synthesis, Generative Models]
+  media:
+    type: image
+    src: /media/publications/tecogan/preview.gif
+    alt: Temporally coherent video generation comparison
+  links:
+    - label: Project
+      url: https://ge.in.tum.de/publications/2019-tecogan-chu/
+    - label: Video
+      url: https://www.youtube.com/watch?v=pZXFXtfd-Ak
+    - label: Code
+      url: https://github.com/thunil/TecoGAN
+    - label: Paper
+      url: https://arxiv.org/pdf/1811.09393.pdf
+
+- bibkey: lens.org/020-578-533-383-523
+  venueShort: SCA 2019, Honourable mention
+  topics: [Super-resolution, Fluids]
+  media:
+    type: image
+    src: /media/publications/other/others.png
+    alt: Fluid flow super-resolution result collection
+  links:
+    - label: Project
+      url: https://ge.in.tum.de/publications/2019-multi-pass-gan/
+    - label: Paper
+      url: https://arxiv.org/abs/1906.01689
+    - label: Code
+      url: https://github.com/tum-pbs/tempoGAN
+
+- bibkey: Xie_2018
+  venueShort: SIGGRAPH 2018
+  selected: true
+  summary: >-
+    tempoGAN produces temporally coherent high-resolution fluid sequences from
+    lower-resolution simulations.
+  topics: [Super-resolution, Generative Models, Fluids]
+  media:
+    type: image
+    src: /media/publications/tempogan/preview.jpg
+    alt: High-resolution fluid synthesis result from tempoGAN
+  links:
+    - label: Project
+      url: https://ge.in.tum.de/publications/tempogan/
+    - label: Video
+      url: https://youtu.be/i6JwXYypZ3Y
+    - label: Code
+      url: https://github.com/thunil/tempoGAN
+    - label: Paper
+      url: https://arxiv.org/pdf/1801.09710.pdf
+
+- bibkey: Chu_2017
+  venueShort: SIGGRAPH 2017
+  selected: true
+  summary: >-
+    CNN-based feature descriptors enable example-driven synthesis of detailed
+    smoke motion from coarse simulations.
+  topics: [Data-driven Simulation, Fluids]
+  media:
+    type: image
+    src: /media/publications/smoke-synthesis/jet.jpg
+    alt: Data-driven smoke flow synthesis result
+  links:
+    - label: Project
+      url: http://ge.in.tum.de/publications/2017-sig-chu/
+    - label: Video
+      url: https://youtu.be/L50fXkStQso
+    - label: Code
+      url: https://github.com/RachelCmy/mantaPatch
+    - label: Paper
+      url: http://ge.in.tum.de/download/2017-sig-chu/2017-sig-chu.pdf

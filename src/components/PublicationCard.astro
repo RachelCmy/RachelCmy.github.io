@@ -1,0 +1,71 @@
+---
+import type { Publication } from "../lib/content";
+
+type Props = {
+  publication: Publication;
+};
+
+const { publication } = Astro.props;
+---
+
+<article
+  class="publication-card"
+  data-publication
+  data-year={publication.year || "Undated"}
+  data-selected={publication.selected ? "true" : "false"}
+>
+  <div class:list={["publication-media", !publication.media && "publication-media--fallback"]}>
+    {publication.media?.type === "video" ? (
+      <video
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster={publication.media.poster}
+        aria-label={publication.media.alt}
+        data-preview-video
+      >
+        <source src={publication.media.src} type="video/mp4" />
+      </video>
+    ) : publication.media?.type === "image" ? (
+      <img src={publication.media.src} alt={publication.media.alt} loading="lazy" decoding="async" />
+    ) : (
+      <div class="publication-fallback" aria-hidden="true">
+        <span>{publication.monogram}</span>
+        <small>Research preview</small>
+      </div>
+    )}
+    <span class="venue-badge">{publication.venueShort}</span>
+  </div>
+  <div class="publication-copy">
+    <p class="venue">{publication.venue}</p>
+    <h3>{publication.title}</h3>
+    <p class="authors">
+      {publication.authors.map((author, index) => (
+        <>
+          {index > 0 && ", "}
+          {author.name === "Mengyu Chu" || author.name === "M. Chu" ? (
+            <strong>
+              {author.url ? <a href={author.url} target="_blank" rel="noreferrer">{author.name}</a> : author.name}
+            </strong>
+          ) : author.url ? (
+            <a href={author.url} target="_blank" rel="noreferrer">{author.name}</a>
+          ) : author.name}
+        </>
+      ))}
+    </p>
+    {publication.summary && <p class="description">{publication.summary}</p>}
+    {publication.topics.length > 0 && (
+      <ul class="topic-list" aria-label="Research topics">
+        {publication.topics.map((topic) => <li>{topic}</li>)}
+      </ul>
+    )}
+    {publication.links.length > 0 && (
+      <div class="publication-links">
+        {publication.links.map((link) => (
+          <a href={link.url} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

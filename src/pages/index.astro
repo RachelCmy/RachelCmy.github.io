@@ -1,0 +1,394 @@
+---
+import PublicationCard from "../components/PublicationCard.astro";
+import { loadPublications, loadYaml } from "../lib/content";
+import "../styles/global.css";
+
+type Profile = {
+  name: string;
+  preferredName: string;
+  nameZh: string;
+  role: string;
+  affiliation: string;
+  lab: string;
+  email: string;
+  photo: string;
+  summary: string;
+  research: string;
+  interests: string[];
+  background: { period: string; role: string; institution: string }[];
+  address: string;
+  links: { label: string; url: string }[];
+};
+
+type NewsItem = {
+  date: string;
+  type: string;
+  title: string;
+  detail?: string;
+  link?: string;
+};
+
+type Funding = {
+  titleZh: string;
+  titleEn: string;
+  projectTitleZh: string;
+  projectTitleEn: string;
+  agency: string;
+  role: string;
+  period: string;
+  projectNumber?: string;
+};
+
+type Service = {
+  category: string;
+  role: string;
+  organization?: string;
+  year: string | number;
+  items?: { organization: string; year: string | number }[];
+  featured?: boolean;
+  url?: string;
+};
+
+const profile = loadYaml<Profile>("../data/profile.yml");
+const news = loadYaml<NewsItem[]>("../data/news.yml");
+const fundings = loadYaml<Funding[]>("../data/fundings.yml");
+const service = loadYaml<Service[]>("../data/service.yml");
+const publications = loadPublications();
+const publishedPublications = publications.filter((publication) => !publication.preprint);
+const preprints = publications.filter((publication) => publication.preprint);
+const years = [...new Set(publishedPublications.map((publication) => publication.year).filter(Boolean))].sort((a, b) => b - a);
+const selectedCount = publishedPublications.filter((publication) => publication.selected).length;
+
+const siteUrl = "https://rachelcmy.github.io";
+const pageTitle = "Mengyu (Rachel) Chu · Peking University";
+const description = "Mengyu (Rachel) Chu is an Assistant Professor at Peking University working on physics-enhanced deep learning, visual computing, and physical simulation.";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  alternateName: [profile.preferredName, profile.nameZh, `${profile.name} (${profile.preferredName}) Chu`],
+  url: siteUrl,
+  image: `${siteUrl}${profile.photo}`,
+  jobTitle: profile.role,
+  email: `mailto:${profile.email}`,
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: "Peking University",
+    url: "https://www.pku.edu.cn/",
+  },
+  sameAs: profile.links.map((link) => link.url),
+  knowsAbout: profile.interests,
+};
+
+const navigation = [
+  ["About", "#about"],
+  ["News", "#news"],
+  ["Publications", "#publications"],
+  ["Preprints", "#preprints"],
+  ["Funding", "#funding"],
+  ["Service", "#service"],
+  ["Contact", "#contact"],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Mengyu Chu" />
+    <meta name="theme-color" content="#f4f1eb" />
+    <meta name="google-site-verification" content="6d55pTgr3lM9DRlAR0DbaGqmGgeDMDEhCJMWfZvNVe8" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={`${siteUrl}/og.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mengyu (Rachel) Chu — Physics-enhanced learning for visual computing and simulation" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og.png`} />
+    <title>{pageTitle}</title>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell nav-wrap">
+        <a class="wordmark" href="#top" aria-label="Back to top">MC<span>.</span></a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          {navigation.map(([label, href]) => <a href={href}>{label}</a>)}
+        </nav>
+        <details class="mobile-menu">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            {navigation.map(([label, href]) => <a href={href}>{label}</a>)}
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Visual computing · Physical simulation · Learning</p>
+          <h1 id="hero-title">
+            {profile.name}
+            <span>{profile.nameZh}</span>
+          </h1>
+          <p class="role">{profile.role}</p>
+          <p class="affiliation">{profile.affiliation}<br />{profile.lab}</p>
+          <p class="lead">{profile.summary}</p>
+          <div class="hero-actions">
+            <a class="button primary" href={`mailto:${profile.email}`}>Email</a>
+            {profile.links.map((link) => <a class="button" href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}
+          </div>
+        </div>
+        <figure class="portrait-wrap">
+          <img src={profile.photo} alt="Portrait of Mengyu Chu" width="305" height="407" fetchpriority="high" />
+          <figcaption>Peking University · Beijing</figcaption>
+        </figure>
+      </section>
+
+      <section class="section shell bio-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading section-heading--compact">
+          <div>
+            <p class="section-kicker">Profile</p>
+            <h2 id="about-title">Bio</h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="research-interests">
+            <h3>Research Interests</h3>
+            <p>{profile.research}</p>
+            <ul class="bio-interest-list">
+              {profile.interests.map((interest) => <li>{interest}</li>)}
+            </ul>
+          </div>
+          <ol class="background-list">
+            {profile.background.map((item) => (
+              <li>
+                <time>{item.period}</time>
+                <div>
+                  <strong>{item.role}</strong>
+                  <span>{item.institution}</span>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section class="section news-section" id="news" aria-labelledby="news-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Recent updates</p>
+              <h2 id="news-title">News</h2>
+            </div>
+          </div>
+          <div class="news-list">
+            {news.map((item) => (
+              <article class="news-item">
+                <time>{item.date}</time>
+                <div>
+                  <span class="tag">{item.type}</span>
+                  <h3>{item.link ? <a href={item.link}>{item.title}</a> : item.title}</h3>
+                  {item.detail && <p>{item.detail}</p>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section publications-section" id="publications" aria-labelledby="publications-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Research output</p>
+              <h2 id="publications-title">Publications</h2>
+            </div>
+          </div>
+          <div class="publication-toolbar" aria-label="Publication filters">
+            <div class="scope-filter" role="group" aria-label="Publication scope">
+              <button class="filter-button is-active" type="button" data-scope="all" aria-pressed="true">All <span>{publishedPublications.length}</span></button>
+              <button class="filter-button" type="button" data-scope="selected" aria-pressed="false">Selected <span>{selectedCount}</span></button>
+            </div>
+            <label class="year-filter">
+              <span>Year</span>
+              <select data-year-filter>
+                <option value="all">All years</option>
+                {years.map((year) => <option value={String(year)}>{year}</option>)}
+              </select>
+            </label>
+            <p class="publication-count" aria-live="polite"><strong data-visible-count>{publishedPublications.length}</strong> works shown</p>
+          </div>
+          <div class="publication-list">
+            {publishedPublications.map((publication) => <PublicationCard publication={publication} />)}
+          </div>
+          <p class="empty-results" data-empty-results hidden>No publications match this filter.</p>
+        </div>
+      </section>
+
+      <section class="section preprints-section" id="preprints" aria-labelledby="preprints-title">
+        <div class="shell">
+          <div class="section-heading section-heading--compact">
+            <div>
+              <p class="section-kicker">Work in progress</p>
+              <h2 id="preprints-title">Preprints</h2>
+            </div>
+          </div>
+          <div class="publication-list">
+            {preprints.map((publication) => <PublicationCard publication={publication} />)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell funding-section" id="funding" aria-labelledby="funding-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Research support</p>
+            <h2 id="funding-title">Funding</h2>
+          </div>
+        </div>
+        <div class="funding-grid">
+          {fundings.map((funding) => (
+            <article class="funding-card">
+              <p class="funding-agency">{funding.agency}</p>
+              <h3 lang="zh-CN">{funding.titleZh}</h3>
+              <p class="funding-title-en">{funding.titleEn}</p>
+              <div class="funding-project-title">
+                <p lang="zh-CN">{funding.projectTitleZh}</p>
+                {funding.projectTitleEn && <p class="funding-project-title-en">{funding.projectTitleEn}</p>}
+              </div>
+              <div class="funding-meta">
+                <strong>{funding.role}</strong>
+                <time>{funding.period}</time>
+                {funding.projectNumber && <span>{funding.projectNumber}</span>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section shell service-section" id="service" aria-labelledby="service-title">
+        <div class="section-heading section-heading--compact">
+          <div>
+            <p class="section-kicker">Academic community</p>
+            <h2 id="service-title">Service</h2>
+          </div>
+        </div>
+        <ul class="service-list">
+          {service.map((item) => (
+            <li class="service-item">
+              <time>{item.year}</time>
+              <div>
+                <strong>{item.role}</strong>
+                {item.items ? (
+                  <ul class="service-venues">
+                    {item.items.map((venue) => (
+                      <li>
+                        <span>{venue.organization}</span>
+                        <time>{venue.year}</time>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span>{item.url ? <a href={item.url}>{item.organization}</a> : item.organization}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div>
+            <p class="section-kicker">Get in touch</p>
+            <h2 id="contact-title">Research conversations are welcome.</h2>
+          </div>
+          <div class="contact-details">
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <p>{profile.address}</p>
+            <div class="contact-links">
+              {profile.links.map((link) => <a href={link.url} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>)}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <p>© {new Date().getFullYear()} Mengyu Chu</p>
+        <p>Built for clarity, maintained through data.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const scopeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-scope]"));
+  const yearFilter = document.querySelector<HTMLSelectElement>("[data-year-filter]");
+  const publicationCards = Array.from(document.querySelectorAll<HTMLElement>("#publications [data-publication]"));
+  const visibleCount = document.querySelector<HTMLElement>("[data-visible-count]");
+  const emptyResults = document.querySelector<HTMLElement>("[data-empty-results]");
+  let activeScope = "all";
+
+  const applyPublicationFilters = () => {
+    const activeYear = yearFilter?.value ?? "all";
+    let count = 0;
+
+    publicationCards.forEach((card) => {
+      const scopeMatches = activeScope === "all" || card.dataset.selected === "true";
+      const yearMatches = activeYear === "all" || card.dataset.year === activeYear;
+      const visible = scopeMatches && yearMatches;
+      card.hidden = !visible;
+      if (visible) count += 1;
+    });
+
+    if (visibleCount) visibleCount.textContent = String(count);
+    if (emptyResults) emptyResults.hidden = count !== 0;
+  };
+
+  scopeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeScope = button.dataset.scope ?? "all";
+      scopeButtons.forEach((candidate) => {
+        const active = candidate === button;
+        candidate.classList.toggle("is-active", active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+      applyPublicationFilters();
+    });
+  });
+
+  yearFilter?.addEventListener("change", applyPublicationFilters);
+
+  const videos = document.querySelectorAll<HTMLVideoElement>("[data-preview-video]");
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) video.play().catch(() => undefined);
+        else video.pause();
+      }
+    }, { threshold: 0.45 });
+    videos.forEach((video) => videoObserver.observe(video));
+  }
+
+  const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobile-menu");
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => mobileMenu.removeAttribute("open"));
+  });
+</script>

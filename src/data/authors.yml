@@ -1,0 +1,101 @@
+# Verified personal or institutional pages. `aliases` cover abbreviated names
+# used by some BibTeX records so one edit updates every publication card.
+
+- name: Mengyu Chu
+  aliases: [M. Chu]
+  url: https://rachelcmy.github.io/
+
+- name: Meng Zhang
+  aliases: [M. Zhang]
+  url: https://mengzephyr.com/
+
+- name: Yinghao Xu
+  aliases: [Y. Xu]
+  url: https://justimyhxu.github.io/
+
+- name: Ningxiao Tao
+  aliases: [N. Tao]
+  url: https://taoningxiao.github.io/
+
+- name: Baoquan Chen
+  aliases: [B. Chen]
+  url: https://cfcs.pku.edu.cn/baoquan/
+
+- name: Xuwen Chen
+  url: https://xw-c.github.io/
+
+- name: Xingyu Ni
+  aliases: [X. Ni]
+  url: https://starryuniv.cn/
+
+- name: Wenzheng Chen
+  url: https://wenzhengchen.github.io/
+
+- name: Qianfan Shen
+  url: https://qianfanshen.github.io/
+
+- name: Qiyu Dai
+  url: https://daiqy.github.io/
+
+- name: Minghan Qin
+  url: https://minghanqin.github.io/
+
+- name: Jingrui Xing
+  url: https://xjr01.github.io/
+
+- name: Kaizhang Kang
+  url: https://cocoakang.cn/
+
+- name: Ruizhen Hu
+  url: https://csse.szu.edu.cn/staff/ruizhenhu/
+
+- name: Qiang Liu
+  url: https://qiauil.github.io/
+
+- name: Nils Thuerey
+  url: https://ge.in.tum.de/about/n-thuerey/
+
+- name: Zhaofeng Luo
+  url: https://roushelfy.github.io/
+
+- name: Shijian Luo
+  url: https://person.zju.edu.cn/en/0099094
+
+- name: Minchen Li
+  url: https://www.cs.cmu.edu/~minchenl/
+
+- name: Yiming Wang
+  url: https://19reborn.github.io/
+
+- name: Siyu Tang
+  url: https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html
+
+- name: Kui Wu
+  url: https://kuiwuchn.github.io/
+
+- name: Chenfanfu Jiang
+  url: https://www.math.ucla.edu/~cffjiang/
+
+- name: Zherong Pan
+  url: https://dyingbrain.github.io/
+
+- name: Lingjie Liu
+  url: https://lingjie0206.github.io/
+
+- name: Hans-Peter Seidel
+  url: https://people.mpi-inf.mpg.de/~hpseidel/
+
+- name: Christian Theobalt
+  url: https://people.mpi-inf.mpg.de/~theobalt/
+
+- name: Rhaleb Zayer
+  url: https://people.mpi-inf.mpg.de/~rzayer/
+
+- name: You Xie
+  url: https://ge.in.tum.de/about/you-xie/
+
+- name: Laura Leal-Taixé
+  url: https://dvl.in.tum.de/team/lealtaixe/
+
+- name: Rüdiger Westermann
+  url: https://www.professoren.tum.de/westermann-ruediger

@@ -1,0 +1,43 @@
+name: Mengyu Chu
+preferredName: Rachel
+nameZh: 楚梦渝
+role: Tenure-track Assistant Professor
+affiliation: School of Intelligence Science and Technology, Peking University
+lab: Visual Computing and Learning Lab
+email: mchu@pku.edu.cn
+photo: /media/profile/hat.jpg
+summary: From captures to simulation-ready worlds.
+research: >-
+  My research combines deep learning with physical simulation to improve the
+  flexibility of simulation systems and the accuracy and generalizability of
+  learning-based models.
+interests:
+  - Physics-enhanced deep learning
+  - Physical simulation
+  - Neural reconstruction
+  - Visual computing
+background:
+  - period: 2022–present
+    role: Assistant Professor
+    institution: Peking University
+  - period: 2020–2022
+    role: Lise Meitner Postdoctoral Research Fellow
+    institution: Max Planck Institute for Informatics
+  - period: 2014–2020
+    role: Ph.D. in Computer Science
+    institution: Technical University of Munich
+  - period: 2011–2014
+    role: M.Eng. in Computer Science and Technology
+    institution: Zhejiang University
+address: >-
+  Sciences II Building, Office 2214S, Peking University, No. 5 Yiheyuan Road,
+  Haidian District, Beijing, China.
+links:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=G8FHnt8AAAAJ&hl=en
+  - label: ORCID
+    url: https://orcid.org/0000-0002-7358-433X
+  - label: GitHub
+    url: https://github.com/RachelCmy
+  - label: YouTube
+    url: https://www.youtube.com/channel/UCOvTFQW2GYtNNnpWBNtKwZg/videos

@@ -1,0 +1,24 @@
+- date: 2026
+  type: Service
+  title: Serving as Associate Editor for Graphical Models.
+  detail: Graphical Models — Elsevier journal on 3D geometric modeling & shape processing; CCF-B.
+- date: 2026
+  type: Publication
+  title: 3 papers appear in the SIGGRAPH 2026
+  detail: LagrangianSplats, Robustness Parametric Surface CCD， and LoBoFit explore fluid reconstruction， floating-point-robust CCD, and flexible garment refitting.
+- date: 2026
+  type: Publication
+  title: FieryGS appears at ICLR 2026.
+  detail: Physics-integrated Gaussian splatting for in-the-wild fire synthesis.
+- date: 2026
+  type: Service
+  title: Serving as Program Co-Chair for SCA 2026.
+  detail: Symposium on Computer Animation.
+- date: 2025
+  type: Publication
+  title: 2 papers appear in the SIGGRAPH 2025.
+  detail: Gaussians can be used for forward fluid simulation (Gaussian Fluids) as well as real-time VR interaction (VR-Doh)!
+- date: 2025
+  type: Publication
+  title: RainyGS appears at CVPR 2025.
+  detail: Efficient rain synthesis in physically based Gaussian splatting.

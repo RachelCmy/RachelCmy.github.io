@@ -1,0 +1,35 @@
+- category: Journal
+  role: Associate Editor
+  organization: Graphical Models (Elsevier journal on 3D geometric modeling & shape processing; CCF-B.)
+  year: 2026–2029
+  featured: true
+- category: Conference
+  role: Program Co-Chair
+  organization: Symposium on Computer Animation (SCA)
+  year: 2026
+  featured: true
+- category: Conference
+  role: Poster Co-Chair
+  organization: Eurographics
+  year: 2023
+  featured: true
+- category: Conference Service
+  role: Chair Secretariat Member
+  organization: CAD/Graphics
+  year: 2025-2026
+- category: Program Committees
+  role: Technical Program Committees
+  year: 2022–2026
+  items:
+    - organization: SIGGRAPH Asia
+      year: 2024–2025
+    - organization: SIGGRAPH Asia Technical Communications & Posters
+      year: 2024
+    - organization: Eurographics
+      year: 2022–2026
+    - organization: Symposium on Computer Animation (SCA)
+      year: 2022–2025
+    - organization: Graphics Interface
+      year: 2024–2025
+    - organization: Pacific Graphics
+      year: 2026

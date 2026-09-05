@@ -1,0 +1,21 @@
+{
+  "name": "mengyu-chu-academic-homepage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build && node scripts/verify-site.mjs",
+    "check": "astro check",
+    "preview": "astro preview",
+    "verify": "node scripts/verify-site.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "astro": "^7.2.10",
+    "typescript": "^5.9.3",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1"
+  }
+}
