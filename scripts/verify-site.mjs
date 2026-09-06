@@ -99,9 +99,9 @@ if (!html.includes('href="/team/"')) fail("The homepage navigation is missing th
 
 const teamIds = new Set();
 const teamNames = new Set();
-const expectedTeamOrder = ["vcl-faculty", "frequent-collaborators", "vcl-physics"];
+const expectedTeamOrder = ["vcl-faculty", "frequent-collaborators", "vcl-physics", "undergraduate-students"];
 if (teamGroups.map((group) => group.id).join(",") !== expectedTeamOrder.join(",")) {
-  fail("Team groups are not in the intended faculty, collaborators, physics-group order.");
+  fail("Team groups are not in the intended faculty, collaborators, physics-group, undergraduate order.");
 }
 for (const group of teamGroups) {
   if (!group.id?.trim() || teamIds.has(group.id)) fail(`Invalid or duplicate Team group id: ${group.id}`);

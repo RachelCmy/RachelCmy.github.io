@@ -51,6 +51,7 @@
     - name: Wei Li
       role: Research Collaborator
       url: https://lwkobe.github.io/
+      image: /media/team/wei-li.card.webp
 
 - id: vcl-physics
   title: VCL Physics Group
@@ -94,8 +95,6 @@
       role: VCL Physics Group
       url: https://dblp.org/pid/405/1173
       image: /media/team/yizao-tang.card.webp
-    - name: Bingrui Gong
-      role: VCL Physics Group
     - name: Siqi Qiao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
@@ -103,6 +102,7 @@
     - name: Cheng Yu
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/cheng-yu.card.webp
     - name: Tianhong Gao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
@@ -119,7 +119,14 @@
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
       image: /media/team/junyu-wang.card.webp
-    - name: Xuxuan He
-      role: Ph.D. Student
+
+- id: undergraduate-students
+  title: Undergraduate Students
+  description: Undergraduate students collaborating with the VCL Physics Group.
+  members:
+    - name: Bingrui Gong
+      role: Undergraduate Student
     - name: Ziyi Liu
-      role: Ph.D. Student
+      role: Undergraduate Student
+    - name: Xuxuan He
+      role: Undergraduate Student

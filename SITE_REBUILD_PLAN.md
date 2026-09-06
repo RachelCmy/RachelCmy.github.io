@@ -384,6 +384,19 @@ Validation results for this refinement:
 - Replaced all rendered local JPG references with WebP paths and removed the
   superseded JPG files after validating the converted images.
 
+### 2026-09-06 — Taller portraits and undergraduate group
+
+- Changed Team portrait cards from square to a taller 4:5 ratio and regenerated
+  the available source portraits at 640×800, preserving substantially more of
+  each vertical composition.
+- Converted the newly supplied Cheng Yu and Wei Li JPG portraits to compressed
+  WebP assets and connected them to their cards.
+- Moved Bingrui Gong, Ziyi Liu, and Xuxuan He into a separate Undergraduate
+  Students section after the VCL Physics Group.
+- Simplified portrait fallbacks to initials on a quiet gradient and removed the
+  crossing decorative lines.
+- Extended Team verification to enforce the new four-section hierarchy.
+
 ## 12. Social-preview generation record
 
 The project-bound output is `public/og.png`. It was generated with the built-in ImageGen tool at 1200×630 pixels and visually checked for exact text.

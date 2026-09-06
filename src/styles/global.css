@@ -954,7 +954,7 @@ h1 span {
 }
 
 .person-image {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #ddd6cc;
 }
@@ -978,20 +978,6 @@ h1 span {
   place-items: center;
   background: linear-gradient(145deg, #d6cec2, #eee9e1 58%, #c9b9b7);
   color: var(--accent);
-}
-
-.person-image--fallback::before,
-.person-image--fallback::after {
-  content: "";
-  position: absolute;
-  width: 66%;
-  height: 1px;
-  background: color-mix(in srgb, var(--accent) 34%, transparent);
-  transform: rotate(-23deg);
-}
-
-.person-image--fallback::after {
-  transform: rotate(31deg);
 }
 
 .person-image--fallback span {
