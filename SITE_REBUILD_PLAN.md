@@ -373,6 +373,17 @@ Validation results for this refinement:
 - Increased the Team directory to 26 people while retaining the faculty,
   frequent-collaborator, and physics-group section order.
 
+### 2026-09-06 — Team portrait optimization
+
+- Added homepage-sourced portraits for Bin Wang and Meng Zhang; retained the
+  initials treatment for Wei Li because his current lab homepage does not show
+  a clearly attributable personal portrait.
+- Added the newly supplied Siqi Qiao portrait and linked it to her Team card.
+- Converted every local Team JPG portrait to a cropped 640×640 WebP card asset,
+  reducing decode and transfer cost while preserving a consistent composition.
+- Replaced all rendered local JPG references with WebP paths and removed the
+  superseded JPG files after validating the converted images.
+
 ## 12. Social-preview generation record
 
 The project-bound output is `public/og.png`. It was generated with the built-in ImageGen tool at 1200×630 pixels and visually checked for exact text.

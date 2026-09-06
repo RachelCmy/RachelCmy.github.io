@@ -36,9 +36,13 @@
     - name: Bin Wang
       role: Independent Researcher
       url: https://binwangbfa.github.io/
+      image: /media/team/bin-wang.card.webp
+      imageSource: https://binwangbfa.github.io/author/bin-wang-%E7%8E%8B-%E6%BB%A8/avatar_hu0a623e0b4e05301507fbf8f408c6f88b_171464_270x270_fill_q90_lanczos_center.jpg
     - name: Meng Zhang
       role: Research Collaborator
       url: https://mengzephyr.com/
+      image: /media/team/meng-zhang.card.webp
+      imageSource: https://mengzephyr.com/materials/TravelBanff_202508.jpg
     - name: Kui Wu
       role: Research Collaborator
       url: https://kuiwuchn.github.io/
@@ -85,35 +89,36 @@
     - name: Zehao Xue
       role: VCL Physics Group
       url: https://vcl.pku.edu.cn/team
-      image: /media/team/zehao-xue.card.jpg
+      image: /media/team/zehao-xue.card.webp
     - name: Yizao Tang
       role: VCL Physics Group
       url: https://dblp.org/pid/405/1173
-      image: /media/team/yizoa-tang.card.jpg
+      image: /media/team/yizao-tang.card.webp
     - name: Bingrui Gong
       role: VCL Physics Group
     - name: Siqi Qiao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/siqi-qiao.card.webp
     - name: Cheng Yu
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
     - name: Tianhong Gao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
-      image: /media/team/tianhong-gao.card.jpg
+      image: /media/team/tianhong-gao.card.webp
     - name: Nuoming Liu
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
-      image: /media/team/nuoming-liu.card.jpg
+      image: /media/team/nuoming-liu.card.webp
     - name: Liru Zhang
       role: Ph.D. Student
       url: https://dblp.org/pid/84/7967.html
-      image: /media/team/liru-zhang.card.jpg
+      image: /media/team/liru-zhang.card.webp
     - name: Junyu Wang
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
-      image: /media/team/junyu-wang.jpg
+      image: /media/team/junyu-wang.card.webp
     - name: Xuxuan He
       role: Ph.D. Student
     - name: Ziyi Liu
