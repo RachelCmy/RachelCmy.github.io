@@ -1,6 +1,53 @@
+- id: vcl-faculty
+  title: VCL Faculty Collaborators
+  description: Faculty collaborators across graphics, simulation, vision, and spatial intelligence.
+  members:
+    - name: Baoquan Chen
+      role: Professor · Peking University
+      url: https://baoquanchen.info/
+      image: /media/team/baoquan-chen.card.webp
+      imageSource: https://cfcs.pku.edu.cn/baoquan/docs/2021-08/20210807171132313456.jpg
+    - name: Libin Liu
+      role: Assistant Professor · Peking University
+      url: https://cfcs.pku.edu.cn/libinliu/
+      image: /media/team/libin-liu.card.webp
+      imageSource: https://cis.pku.edu.cn/__local/4/68/52/7936B48D8B226C14EF8AC26C2B1_7E465396_1582A9.png
+    - name: Wenzheng Chen
+      role: Assistant Professor · Peking University
+      url: https://wenzhengchen.github.io/
+      image: /media/team/wenzheng-chen.card.webp
+      imageSource: https://wenzhengchen.github.io/images/7341614762140.webp
+    - name: Peng-Shuai Wang
+      role: Assistant Professor · Peking University
+      url: https://wang-ps.github.io/
+      image: /media/team/pengshuai-wang.card.webp
+      imageSource: https://wang-ps.github.io/images/me.jpg
+      objectPosition: 28% center
+
+- id: frequent-collaborators
+  title: Frequent Collaborators
+  description: Long-term research collaborators in physical simulation, learning, and computational graphics.
+  members:
+    - name: Nils Thuerey
+      role: Professor · Technical University of Munich
+      url: https://ge.in.tum.de/about/n-thuerey/
+      image: /media/team/nils-thuerey.card.webp
+      imageSource: https://ge.in.tum.de/wp-content/uploads/2025/09/nils-sm01-e1758097450849.jpg
+    - name: Meng Zhang
+      role: Research Collaborator
+      url: https://mengzephyr.com/
+    - name: Kui Wu
+      role: Research Collaborator
+      url: https://kuiwuchn.github.io/
+      image: /media/team/kui-wu.card.webp
+      imageSource: https://kuiwuchn.github.io/kwu.jpg
+    - name: Wei Li
+      role: Research Collaborator
+      url: https://lwkobe.github.io/
+
 - id: vcl-physics
-  title: VCL Physics Group Collaborators
-  description: Current collaborators and alumni from the physics group at the Visual Computing and Learning Lab.
+  title: VCL Physics Group
+  description: Students, colleagues, and alumni working together on physical simulation and simulation-ready intelligence.
   members:
     - name: Xingyu Ni
       role: Alumni · Ph.D. 2025
@@ -40,11 +87,6 @@
       url: https://dblp.org/pid/405/1173
     - name: Bingrui Gong
       role: VCL Physics Group
-
-- id: phd-students
-  title: Ph.D. Students · VCL Physics Group
-  description: Ph.D. students working with me on physical simulation and simulation-ready intelligence.
-  members:
     - name: Siqi Qiao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
@@ -67,50 +109,3 @@
       role: Ph.D. Student
     - name: Ziyi Liu
       role: Ph.D. Student
-
-- id: vcl-faculty
-  title: VCL Faculty Collaborators
-  description: Faculty collaborators across graphics, simulation, vision, and spatial intelligence.
-  members:
-    - name: Baoquan Chen
-      role: Professor · Peking University
-      url: https://baoquanchen.info/
-      image: /media/team/baoquan-chen.card.webp
-      imageSource: https://cfcs.pku.edu.cn/baoquan/docs/2021-08/20210807171132313456.jpg
-    - name: Libin Liu
-      role: Assistant Professor · Peking University
-      url: https://cfcs.pku.edu.cn/libinliu/
-      image: /media/team/libin-liu.card.webp
-      imageSource: https://cis.pku.edu.cn/__local/4/68/52/7936B48D8B226C14EF8AC26C2B1_7E465396_1582A9.png
-    - name: Wenzheng Chen
-      role: Assistant Professor · Peking University
-      url: https://wenzhengchen.github.io/
-      image: /media/team/wenzheng-chen.card.webp
-      imageSource: https://wenzhengchen.github.io/images/7341614762140.webp
-    - name: Peng-Shuai Wang
-      role: Assistant Professor · Peking University
-      url: https://wang-ps.github.io/
-      image: /media/team/pengshuai-wang.card.webp
-      imageSource: https://wang-ps.github.io/images/me.jpg
-      objectPosition: 28% center
-
-- id: collaborators
-  title: Other Collaborators
-  description: Long-term research collaborators in physical simulation, learning, and computational graphics.
-  members:
-    - name: Nils Thuerey
-      role: Professor · Technical University of Munich
-      url: https://ge.in.tum.de/about/n-thuerey/
-      image: /media/team/nils-thuerey.card.webp
-      imageSource: https://ge.in.tum.de/wp-content/uploads/2025/09/nils-sm01-e1758097450849.jpg
-    - name: Meng Zhang
-      role: Research Collaborator
-      url: https://mengzephyr.com/
-    - name: Kui Wu
-      role: Research Collaborator
-      url: https://kuiwuchn.github.io/
-      image: /media/team/kui-wu.card.webp
-      imageSource: https://kuiwuchn.github.io/kwu.jpg
-    - name: Wei Li
-      role: Research Collaborator
-      url: https://lwkobe.github.io/

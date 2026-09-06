@@ -341,9 +341,9 @@ Validation results for this refinement:
 
 - Added a dedicated, fully English `/team/` route and a shared site header so
   Team is available from both desktop and mobile navigation.
-- Organized 25 people into VCL Physics Group Collaborators, Ph.D. Students,
-  VCL Faculty Collaborators, and Other Collaborators, preserving the supplied
-  order and alumni years.
+- Organized 25 people into VCL Faculty Collaborators, Frequent Collaborators,
+  and one combined VCL Physics Group, preserving the supplied member order and
+  alumni years.
 - Linked verified personal or institutional profiles where available. Used the
   official VCL roster or DBLP profile only as a conservative fallback, and left
   uncertain same-name results unlinked.
@@ -352,6 +352,16 @@ Validation results for this refinement:
   initials treatment rather than an invented or mismatched photo.
 - Added Team data and asset checks, route verification, homepage navigation
   verification, and a same-year descending-publication-order assertion.
+
+### 2026-09-06 — Team relationship hierarchy
+
+- Moved VCL Faculty Collaborators to the first position.
+- Renamed Other Collaborators to Frequent Collaborators and placed the group in
+  the middle of the page.
+- Merged the former VCL Physics collaborators and Ph.D. Students sections into
+  one VCL Physics Group at the end of the page.
+- Added a verification assertion for this three-part order so future data edits
+  cannot silently rearrange the intended hierarchy.
 
 ## 12. Social-preview generation record
 
