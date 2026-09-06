@@ -1,6 +1,6 @@
 # Personal Website Rebuild Plan
 
-Last updated: 2026-09-04
+Last updated: 2026-09-06
 
 This document is the implementation record for rebuilding Mengyu (Rachel) Chu's academic homepage. It is intentionally kept in the repository so that design decisions, content assumptions, unfinished items, and validation results can be reviewed later.
 
@@ -341,7 +341,7 @@ Validation results for this refinement:
 
 - Added a dedicated, fully English `/team/` route and a shared site header so
   Team is available from both desktop and mobile navigation.
-- Organized 25 people into VCL Faculty Collaborators, Frequent Collaborators,
+- Organized 26 people into VCL Faculty Collaborators, Frequent Collaborators,
   and one combined VCL Physics Group, preserving the supplied member order and
   alumni years.
 - Linked verified personal or institutional profiles where available. Used the
@@ -362,6 +362,16 @@ Validation results for this refinement:
   one VCL Physics Group at the end of the page.
 - Added a verification assertion for this three-part order so future data edits
   cannot silently rearrange the intended hierarchy.
+
+### 2026-09-06 — Collaborator and student portrait update
+
+- Added Bin Wang to Frequent Collaborators, linked to her personal homepage and
+  identified only as an Independent Researcher without a current institutional
+  affiliation.
+- Connected the six user-supplied portraits to Zehao Xue, Yizao Tang, Tianhong
+  Gao, Nuoming Liu, Liru Zhang, and Junyu Wang on the VCL Physics Group roster.
+- Increased the Team directory to 26 people while retaining the faculty,
+  frequent-collaborator, and physics-group section order.
 
 ## 12. Social-preview generation record
 

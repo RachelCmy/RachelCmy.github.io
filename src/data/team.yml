@@ -33,6 +33,9 @@
       url: https://ge.in.tum.de/about/n-thuerey/
       image: /media/team/nils-thuerey.card.webp
       imageSource: https://ge.in.tum.de/wp-content/uploads/2025/09/nils-sm01-e1758097450849.jpg
+    - name: Bin Wang
+      role: Independent Researcher
+      url: https://binwangbfa.github.io/
     - name: Meng Zhang
       role: Research Collaborator
       url: https://mengzephyr.com/
@@ -82,9 +85,11 @@
     - name: Zehao Xue
       role: VCL Physics Group
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/zehao-xue.card.jpg
     - name: Yizao Tang
       role: VCL Physics Group
       url: https://dblp.org/pid/405/1173
+      image: /media/team/yizoa-tang.card.jpg
     - name: Bingrui Gong
       role: VCL Physics Group
     - name: Siqi Qiao
@@ -96,15 +101,19 @@
     - name: Tianhong Gao
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/tianhong-gao.card.jpg
     - name: Nuoming Liu
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/nuoming-liu.card.jpg
     - name: Liru Zhang
       role: Ph.D. Student
       url: https://dblp.org/pid/84/7967.html
+      image: /media/team/liru-zhang.card.jpg
     - name: Junyu Wang
       role: Ph.D. Student
       url: https://vcl.pku.edu.cn/team
+      image: /media/team/junyu-wang.jpg
     - name: Xuxuan He
       role: Ph.D. Student
     - name: Ziyi Liu
