@@ -912,14 +912,6 @@ h1 span {
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.team-group-index {
-  margin-bottom: 0.65rem;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-
 .team-group-heading h2 {
   margin: 0;
   font: 600 clamp(2.25rem, 4vw, 3.7rem)/1 var(--serif);

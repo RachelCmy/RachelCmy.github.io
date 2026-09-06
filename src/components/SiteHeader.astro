@@ -12,7 +12,7 @@ const navigation = [
   ["Preprints", homeAnchor("#preprints")],
   ["Funding", homeAnchor("#funding")],
   ["Service", homeAnchor("#service")],
-  ["Team", "/team/"],
+  ["People", "/team/"],
   ["Contact", homeAnchor("#contact")],
 ];
 ---
@@ -22,14 +22,14 @@ const navigation = [
     <a class="wordmark" href={current === "home" ? "#top" : "/#top"} aria-label="Mengyu Chu home">MC<span>.</span></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       {navigation.map(([label, href]) => (
-        <a href={href} aria-current={label === "Team" && current === "team" ? "page" : undefined}>{label}</a>
+        <a href={href} aria-current={label === "People" && current === "team" ? "page" : undefined}>{label}</a>
       ))}
     </nav>
     <details class="mobile-menu">
       <summary>Menu</summary>
       <nav aria-label="Mobile navigation">
         {navigation.map(([label, href]) => (
-          <a href={href} aria-current={label === "Team" && current === "team" ? "page" : undefined}>{label}</a>
+          <a href={href} aria-current={label === "People" && current === "team" ? "page" : undefined}>{label}</a>
         ))}
       </nav>
     </details>

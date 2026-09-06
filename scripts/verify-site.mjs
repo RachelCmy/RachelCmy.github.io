@@ -96,6 +96,9 @@ const teamOutputPath = resolve(root, "dist/team/index.html");
 if (!existsSync(teamOutputPath)) fail("dist/team/index.html does not exist.");
 const teamHtml = readFileSync(teamOutputPath, "utf8");
 if (!html.includes('href="/team/"')) fail("The homepage navigation is missing the Team route.");
+if (!html.includes(">People</a>")) fail("The homepage navigation is missing the People label.");
+if (!teamHtml.includes("<h1 id=\"team-title\">People</h1>")) fail("The People page title is missing.");
+if (teamHtml.includes("team-group-index")) fail("Obsolete numbered People section labels are still rendered.");
 
 const teamIds = new Set();
 const teamNames = new Set();

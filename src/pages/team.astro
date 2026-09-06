@@ -20,7 +20,7 @@ type TeamGroup = {
 };
 
 const groups = loadYaml<TeamGroup[]>("../data/team.yml");
-const pageTitle = "Team · Mengyu (Rachel) Chu";
+const pageTitle = "People · Mengyu (Rachel) Chu";
 const description = "Students, VCL colleagues, faculty partners, and research collaborators working with Mengyu Chu.";
 const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2);
 ---
@@ -51,11 +51,11 @@ const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join
       <section class="team-hero shell" id="top" aria-labelledby="team-title">
         <div>
           <p class="eyebrow">Visual Computing · Physical Intelligence</p>
-          <h1 id="team-title">Team</h1>
+          <h1 id="team-title">People</h1>
         </div>
         <div class="team-intro">
           <p>Students, colleagues, and collaborators advancing physical simulation and simulation-ready intelligence.</p>
-          <nav aria-label="Team groups">
+          <nav aria-label="People groups">
             {groups.map((group) => <a href={`#${group.id}`}>{group.title}<span>{group.members.length}</span></a>)}
           </nav>
         </div>
@@ -66,7 +66,6 @@ const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join
           <div class="shell">
             <div class="team-group-heading">
               <div>
-                <p class="team-group-index">{String(groupIndex + 1).padStart(2, "0")}</p>
                 <h2 id={`${group.id}-title`}>{group.title}</h2>
               </div>
               <p>{group.description}</p>

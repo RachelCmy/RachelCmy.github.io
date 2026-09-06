@@ -397,6 +397,16 @@ Validation results for this refinement:
   crossing decorative lines.
 - Extended Team verification to enforce the new four-section hierarchy.
 
+### 2026-09-06 — People naming and section cleanup
+
+- Renamed the public-facing Team navigation label, page heading, browser title,
+  and accessibility label to People, which better covers faculty partners,
+  frequent collaborators, graduate colleagues, and undergraduate students.
+- Retained the stable `/team/` route so existing links and bookmarks continue
+  to work.
+- Removed the decorative 01/02/03/04 prefixes from every People section and
+  deleted their unused styling.
+
 ## 12. Social-preview generation record
 
 The project-bound output is `public/og.png`. It was generated with the built-in ImageGen tool at 1200×630 pixels and visually checked for exact text.
