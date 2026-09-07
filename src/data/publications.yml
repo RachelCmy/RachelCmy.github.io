@@ -7,7 +7,7 @@
   topics: [Physical Simulation, Gaussian Splatting, Reconstruction]
   media:
     type: image
-    src: /media/publications/lagrangian-splats/teaser.png
+    src: /media/publications/lagrangian-splats/teaser.webp
     alt: LagrangianSplats fluid reconstruction and velocity-field teaser
   links:
     - label: Project
@@ -24,7 +24,7 @@
   topics: [Geometry, Garment Modeling]
   media:
     type: image
-    src: /media/publications/lobofit/teaser.png
+    src: /media/publications/lobofit/teaser.webp
     alt: LoBoFit garments refitted across avatars with different body shapes
   links:
     - label: Project
@@ -56,7 +56,7 @@
   topics: [Physical Simulation, Articulated Objects]
   media:
     type: image
-    src: /media/publications/joda/pipeline.png
+    src: /media/publications/joda/pipeline.webp
     alt: JODA pipeline for composable articulated-object joint dynamics
   links:
     - label: Paper
@@ -68,7 +68,7 @@
   topics: [Physical Simulation, GPU Computing]
   media:
     type: image
-    src: /media/publications/adaptive-gpu/teaser.jpg
+    src: /media/publications/adaptive-gpu/teaser.webp
     alt: Large-scale fluid and granular simulation examples
   links:
     - label: Paper
@@ -95,7 +95,7 @@
   topics: [Gaussian Splatting, Physics-enhanced Learning]
   media:
     type: image
-    src: /media/publications/fierygs/teaser.png
+    src: /media/publications/fierygs/teaser.webp
     alt: FieryGS fire synthesis in reconstructed real-world scenes
   links:
     - label: Project
@@ -110,7 +110,7 @@
   topics: [Reconstruction, Fluids]
   media:
     type: image
-    src: /media/publications/flowcapx/teaser.png
+    src: /media/publications/flowcapx/teaser.webp
     alt: FlowCapX flow reconstruction, analysis, and re-simulation teaser
   links:
     - label: Paper
@@ -123,7 +123,7 @@
   topics: [Virtual Reality, Geometry]
   media:
     type: image
-    src: /media/publications/vr-doh/teaser.jpg
+    src: /media/publications/vr-doh/teaser.webp
     alt: VR-Doh hands-on modeling and object-editing examples
   links:
     - label: Project
@@ -142,7 +142,7 @@
   topics: [Physical Simulation, Gaussian Splatting, Fluids]
   media:
     type: image
-    src: /media/publications/gaussian-fluids/teaser.jpg
+    src: /media/publications/gaussian-fluids/teaser.webp
     alt: Gaussian Fluids vortex-ring simulation
   links:
     - label: Project
@@ -160,8 +160,9 @@
     rain synthesis.
   topics: [Gaussian Splatting, Visual Effects]
   media:
-    type: image
-    src: /media/publications/rainygs/2025_RainyGS.gif
+    type: video
+    src: /media/publications/rainygs/2025_RainyGS.mp4
+    poster: /media/publications/rainygs/2025_RainyGS.poster.webp
     alt: RainyGS controllable rain synthesis at multiple intensities
   links:
     - label: Project
@@ -190,7 +191,7 @@
   topics: [Physical Simulation, Fluid-solid Coupling]
   media:
     type: image
-    src: /media/publications/fast-mbcui/featured.png
+    src: /media/publications/fast-mbcui/featured.webp
     alt: Underwater multi-body coupling and grasping simulation
   links:
     - label: Project
@@ -227,6 +228,7 @@
   media:
     type: video
     src: /media/publications/pict/path_crop.mp4
+    poster: /media/publications/pict/path_crop.poster.webp
     alt: Characteristic trajectories moving through a reconstructed smoke volume
   links:
     - label: Project
@@ -248,6 +250,7 @@
   media:
     type: video
     src: /media/publications/pinf/carout1.mp4
+    poster: /media/publications/pinf/carout1.poster.webp
     alt: Sparse-view neural smoke reconstruction result
   links:
     - label: Project
@@ -270,6 +273,7 @@
   media:
     type: video
     src: /media/publications/learning-controls/smokeout1.mp4
+    poster: /media/publications/learning-controls/smokeout1.poster.webp
     alt: Controlled smoke simulation preview
   links:
     - label: Project
@@ -286,7 +290,7 @@
   topics: [Visualization, Super-resolution]
   media:
     type: image
-    src: /media/publications/other/others.png
+    src: /media/publications/other/others.webp
     alt: Collection of learning-based visualization results
   links:
     - label: Paper
@@ -304,8 +308,9 @@
     requiring paired temporal supervision.
   topics: [Video Synthesis, Generative Models]
   media:
-    type: image
-    src: /media/publications/tecogan/preview.gif
+    type: video
+    src: /media/publications/tecogan/preview.mp4
+    poster: /media/publications/tecogan/preview.poster.webp
     alt: Temporally coherent video generation comparison
   links:
     - label: Project
@@ -322,7 +327,7 @@
   topics: [Super-resolution, Fluids]
   media:
     type: image
-    src: /media/publications/other/others.png
+    src: /media/publications/other/others.webp
     alt: Fluid flow super-resolution result collection
   links:
     - label: Project

@@ -1,6 +1,6 @@
 # Personal Website Rebuild Plan
 
-Last updated: 2026-09-06
+Last updated: 2026-09-07
 
 This document is the implementation record for rebuilding Mengyu (Rachel) Chu's academic homepage. It is intentionally kept in the repository so that design decisions, content assumptions, unfinished items, and validation results can be reviewed later.
 
@@ -406,6 +406,20 @@ Validation results for this refinement:
   to work.
 - Removed the decorative 01/02/03/04 prefixes from every People section and
   deleted their unused styling.
+
+### 2026-09-07 — Publication media performance
+
+- Replaced the 13.2 MB RainyGS GIF and 1.2 MB TecoGAN GIF with looping H.264
+  MP4 previews and lightweight WebP poster frames.
+- Resized ten oversized publication teasers to a maximum dimension of 960 px
+  and converted them to WebP while preserving their full compositions.
+- Added WebP posters to every publication video and changed video preload from
+  `metadata` to `none`, deferring video transfer until playback is requested in
+  the viewport.
+- Removed the superseded GIF, PNG, and JPG teaser files, the duplicate unused
+  PINF smoke video, and the no-longer-rendered public copy of `hat.jpg`.
+- Added verification rules that reject publication GIFs and eager video metadata
+  loading in future builds.
 
 ## 12. Social-preview generation record
 

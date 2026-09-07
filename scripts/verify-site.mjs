@@ -28,6 +28,9 @@ if (unconfiguredKeys.length > 0) fail(`BibTeX entries need a publications.yml en
 
 for (const publication of enhancements) {
   if (!publication.venueShort?.trim()) fail(`Missing venueShort for ${publication.bibkey}`);
+  if (publication.media?.src?.toLowerCase().endsWith(".gif")) {
+    fail(`Publication animation must use an efficient video format instead of GIF: ${publication.bibkey}`);
+  }
   const mediaPaths = [publication.media?.src, publication.media?.poster].filter(Boolean);
   for (const mediaPath of mediaPaths) {
     if (!mediaPath.startsWith("/")) fail(`Media path for ${publication.bibkey} must start with /: ${mediaPath}`);
@@ -91,6 +94,7 @@ for (const requiredFile of ["og.png", "favicon.svg", "robots.txt", "sitemap.xml"
 
 if (!html.includes('property="og:image"')) fail("Open Graph image metadata is missing.");
 if (!html.includes('type="application/ld+json"')) fail("Person structured data is missing.");
+if (html.includes('preload="metadata"')) fail("Publication videos should not preload metadata before entering the viewport.");
 
 const teamOutputPath = resolve(root, "dist/team/index.html");
 if (!existsSync(teamOutputPath)) fail("dist/team/index.html does not exist.");
